@@ -2,6 +2,9 @@ import React from "react";
 import "./styles.css";
 import ProfilePic from "./profile_pic.png";
 import TimeCapsuleButton from "../Buttons/TimeCapsuleButton";
+import FriendsFamilyButton from "../Buttons/Friends&FamilyButton";
+import EventsButton from "../Buttons/EventsButton";
+import MedicationButton from "../Buttons/MedicationButton";
 
 function Dashboard() {
   return (
@@ -15,11 +18,11 @@ function Dashboard() {
         <h2>Welcome, [User's Name]</h2>
         <p> This is where we will include further information for the user</p>
       </div>
-      <div className="feature-buttons">
+      <div className = "button-container">
         <TimeCapsuleButton />
-        <button>Friends & Family</button>
-        <button>Medication</button>
-        <button>Routine</button>
+        <MedicationButton/>
+        <FriendsFamilyButton/>
+        <EventsButton/>
       </div>
     </>
   );
