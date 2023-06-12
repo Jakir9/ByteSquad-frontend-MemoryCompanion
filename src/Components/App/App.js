@@ -1,5 +1,5 @@
 import "./App.css";
-// import '../../fonts.css';
+import '../../fonts.css';
 import Dashboard from "../Dashboard";
 
 function App() {

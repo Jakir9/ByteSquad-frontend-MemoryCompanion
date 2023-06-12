@@ -6,10 +6,11 @@
   --darkbackground-text-colour: #faf8f6;
   --other-colour: #eaecde;
   --other-colour2: #c2c2c2;
-  --main-font-family: "Quicksand", sans-serif;
-  --secondary-font-family: "Roboto", sans-serif;
+  --main-font-family: 'Quicksand', sans-serif;  
+
 }
 *{
+   font-family:'Quicksand'; /*Short term solution, return to add to root later. */
   background-color: var(--main-background-color);
 }
 

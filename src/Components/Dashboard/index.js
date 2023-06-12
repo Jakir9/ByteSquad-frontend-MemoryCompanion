@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import ProfilePic from "./profile_pic.png";
+import TimeCapsuleButton from "../Buttons/TimeCapsuleButton";
 
 function Dashboard() {
   return (
@@ -15,7 +16,7 @@ function Dashboard() {
         <p> This is where we will include further information for the user</p>
       </div>
       <div className="feature-buttons">
-        <button>Time Capsule</button>
+        <TimeCapsuleButton />
         <button>Friends & Family</button>
         <button>Medication</button>
         <button>Routine</button>
