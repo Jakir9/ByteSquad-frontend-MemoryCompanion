@@ -1,0 +1,38 @@
+:root {
+  --main-background-color: #faf8f6;
+  --main-accent-colour: #79aabd;
+  --secondary-accent-colour: #ff9b2f;
+  --whitebackground-text-colour: #656059;
+  --darkbackground-text-colour: #faf8f6;
+  --other-colour: #eaecde;
+  --other-colour2: #c2c2c2;
+  --main-font-family: "Quicksand", sans-serif;
+  --secondary-font-family: "Roboto", sans-serif;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.dashboard-message {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  font: var(--main-font-family);
+  color: red;
+}
+
+.feature-buttons button {
+  background-color: var(--secondary-accent-colour);
+  color: var(--darkbackground-text-colour);
+  width: 275px;
+  height: 146px;
+  left: 62px;
+  top: 304px;
+  margin: 10px;
+}
