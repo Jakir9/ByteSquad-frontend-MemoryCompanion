@@ -1,11 +1,12 @@
 import "./App.css";
 import '../../fonts.css';
 import Dashboard from "../Dashboard";
+import NavBar from "../NavBar";
 
 function App() {
   return (
     <div className="App">
-      <h1>Memory Companion</h1>
+      <NavBar/>
       <Dashboard />
     </div>
   );
