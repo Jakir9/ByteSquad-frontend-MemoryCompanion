@@ -1,14 +1,14 @@
 import React from "react";
 import "./styles.css";
+import ProfilePic from "./profile_pic.png";
 
 function Dashboard() {
   return (
     <>
       {/* Note: We may need a div to wrap the whole component for styling the whole page or making it responsive */}
-      <h1>TEST</h1>
-      <div className="profile-pic">
+      <div className="profile-pic-section">
         {/* Initially image will be hardcoded, this will eventually be replaced with the logged in user's profile image */}
-        <img src="" alt="Profile Image" />
+        <img className="profile-pic" src={ProfilePic} alt="Profile Image" />
       </div>
       <div className="dashboard-message">
         <h2>Welcome, [User's Name]</h2>
