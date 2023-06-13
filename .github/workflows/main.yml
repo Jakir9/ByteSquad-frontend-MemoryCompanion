@@ -19,10 +19,10 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Build
-        run: |
-          # Add commands to build your code here
-          # For example: npm run build or mvn package
+      #   - name: Build
+      #     run: |
+      #       # Add commands to build your code here
+      #       # For example: npm run build or mvn package
 
       - name: Deploy to Vercel
         run: npx vercel --prod
