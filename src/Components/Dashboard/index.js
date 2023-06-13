@@ -6,6 +6,7 @@ import FriendsFamilyButton from "../Buttons/Friends&FamilyButton";
 import EventsButton from "../Buttons/EventsButton";
 import MedicationButton from "../Buttons/MedicationButton";
 
+
 function Dashboard() {
   return (
     <>
@@ -33,3 +34,5 @@ export default Dashboard;
 // Need profile image of the logged in user
 // Need a paragraph with a welcome message, which references the logged in user's name
 // Then 4 buttons which will navigate the user to the different pages
+// Need to set up react routing for the button
+  // This allows us to navigate to the different pages by clicking the buttons

@@ -24,6 +24,12 @@
     background-color: #FF9B2F;
 
   }
+
+  a {
+    text-decoration: none;
+    color: #FAF8F6;
+    background-color: #FF9B2F;
+  }
   
   /* .time-capsule-text {
     font-size: 16px; /* Adjust the font size as needed */
