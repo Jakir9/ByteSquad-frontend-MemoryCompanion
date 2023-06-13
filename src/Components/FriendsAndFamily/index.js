@@ -1,10 +1,13 @@
 import React from 'react'
+import { useState } from 'react'
 import Card from '../Card/Card'
 import chris from './chris.jpeg'
 import sarah from './sarah.jpeg'
 import tom from './tom.jpeg'
 
-function FriendsAndFamily() {
+function FriendsAndFamily () {
+  const [addButton, setAddButton] = useState(false)
+
   const list = [
     { id: 0, name: 'Chris', relationship: 'Grandson', image: chris },
     {
@@ -21,18 +24,26 @@ function FriendsAndFamily() {
     },
   ]
 
+  function handleClick () {
+    setAddButton(true)
+    
+  }
+
   return (
     <>
-      {list.map((item) => (
-        <Card
-          id={item.id}
-          name={item.name}
-          relationship={item.relationship}
-          image={item.image}
-        />
-      ))}
+      
+    {!addButton && (
+  {list.map((item) => (
+    <Card
+      id={item.id}
+      name={item.name}
+      relationship={item.relationship}
+      image={item.image}
+    />
+  ))}
 
-      <button style={{ display: 'flex', alignitems: 'center' }}> Add </button>
+  <button style={{ display: 'flex', alignItems: 'center' }} onClick={handleClick}> Add </button>
+)}   
     </>
   )
 }
