@@ -23,6 +23,3 @@ jobs:
       #   - name: Build
       #     run: npm run build # Replace with your build command
 
-      - name: Deploy to Vercel
-        run: echo "Yes" | npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} # Replace with your deployment command
-
