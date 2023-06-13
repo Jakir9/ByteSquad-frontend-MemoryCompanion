@@ -25,4 +25,4 @@ jobs:
       #       # For example: npm run build or mvn package
 
       - name: Deploy to Vercel
-        run: npx vercel --prod
+        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
