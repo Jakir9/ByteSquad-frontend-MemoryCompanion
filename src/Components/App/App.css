@@ -12,6 +12,14 @@
   --other-colour2: #C2C2C2;
 }
 
+/* footer{
+  background-color: #C2C2C2;
+  display:flex;
+  justify-content: center;
+  
+
+} */
+
   /* Call variable
   h1 {
   color: var(--main-background-color)

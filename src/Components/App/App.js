@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <NavBar/>
       <Dashboard />
+      <footer>ByteSquad</footer>
     </div>
   );
 }

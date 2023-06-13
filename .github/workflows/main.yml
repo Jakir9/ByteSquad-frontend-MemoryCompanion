@@ -1,0 +1,28 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main # Replace with the branch you want to trigger the workflow on
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build
+        run: |
+          # Add commands to build your code here
+          # For example: npm run build or mvn package
+
+      - name: Deploy to Vercel
+        run: npx vercel --prod
