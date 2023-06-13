@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 
 const FriendsFamilyButton = () => {
   return (
+    <Link to="/friends&family"> 
     <button className="section-button">
       <img src= {thumbnail} alt="Button Icon" className="button-icon" />
-      <Link to="/friends&family">Friends and Family</Link>
+     Friends and Family
     </button>
+    </Link>
   );
 };
 
