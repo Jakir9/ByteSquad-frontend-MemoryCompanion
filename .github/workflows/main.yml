@@ -1,29 +1,27 @@
 name: CI/CD Workflow
-
 on:
   push:
     branches:
-      - main # Replace with the branch you want to trigger the workflow on
+      - main # Replace with the branch you want to trigger the build and deploy on
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 10 # Adjust the timeout duration as needed
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16 # Set the Node.js version you want to use
+
       - name: Install dependencies
         run: npm install
 
-      #   - name: Run tests
-      #     run: npm test
-
       #   - name: Build
-      #     run: |
-      #       # Add commands to build your code here
-      #       # For example: npm run build or mvn package
+      #     run: npm run build # Replace with your build command
 
       - name: Deploy to Vercel
-        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} # Replace with your deployment command
