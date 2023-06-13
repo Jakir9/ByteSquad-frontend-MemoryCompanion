@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10 # Adjust the timeout duration as needed
 
     steps:
       - name: Checkout repository
