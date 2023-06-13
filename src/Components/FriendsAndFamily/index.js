@@ -1,36 +1,38 @@
 import React from 'react'
+import Card from '../Card/Card'
 import chris from './chris.jpeg'
 import sarah from './sarah.jpeg'
+import tom from './tom.jpeg'
 
 function FriendsAndFamily() {
+  const list = [
+    { id: 0, name: 'Chris', relationship: 'Grandson', image: chris },
+    {
+      id: 1,
+      name: 'Sarah',
+      relationship: 'Granddaughter',
+      image: sarah,
+    },
+    {
+      id: 2,
+      name: 'Tom',
+      relationship: 'Son',
+      image: tom,
+    },
+  ]
+
   return (
     <>
-      <div className="fnf-1">
-        <figure style={{ width: 250 }}>
-          {' '}
-          <button style={{ display: 'flex', alignitems: 'center' }}> X </button>
-          <img
-            style={{ height: 300, width: 200 }}
-            src={chris}
-            alt="Chris"
-          />{' '}
-        </figure>
+      {list.map((item) => (
+        <Card
+          id={item.id}
+          name={item.name}
+          relationship={item.relationship}
+          image={item.image}
+        />
+      ))}
 
-        <figcaption> Chris, my Grandson</figcaption>
-      </div>
-
-      <div className="fnf-2">
-        {' '}
-        <figure>
-          {' '}
-          <img
-            style={{ height: 300, width: 200 }}
-            src={sarah}
-            alt="Sarah"
-          />{' '}
-        </figure>
-        <figcaption> Sarah, my Granddaughter</figcaption>
-      </div>
+      <button style={{ display: 'flex', alignitems: 'center' }}> Add </button>
     </>
   )
 }
