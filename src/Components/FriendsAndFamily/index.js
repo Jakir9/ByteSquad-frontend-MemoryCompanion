@@ -1,78 +1,81 @@
-import React from 'react'
-import { useState } from 'react'
-import Card from '../Card/Card'
-import chris from './chris.jpeg'
-import sarah from './sarah.jpeg'
-import tom from './tom.jpeg'
+import React from "react";
+import { useState } from "react";
+import Card from "../Card/Card";
+import chris from "./chris.jpeg";
+import sarah from "./sarah.jpeg";
+import tom from "./tom.jpeg";
+
+let list = [
+  {
+    id: 0,
+    name: "Chris",
+    relationship: "Grandson",
+    image: chris,
+    age: 10,
+    dateOfBirth: "2013-01-01",
+  },
+  {
+    id: 1,
+    name: "Sarah",
+    relationship: "Granddaughter",
+    image: sarah,
+    age: 12,
+    dateOfBirth: "2011-01-01",
+  },
+  {
+    id: 2,
+    name: "Tom",
+    relationship: "Son",
+    image: tom,
+    age: 24,
+    dateOfBirth: "1998-01-11",
+  },
+];
 
 function FriendsAndFamily() {
-  const [addButton, setAddButton] = useState(false) //
-  const [relationship, setRelationship] = useState('')
-  const [name, setName] = useState('')
-  const [DOB, setDOB] = useState('')
-  const [age, setAge] = useState(null)
-
-  let list = [
-    {
-      id: 0,
-      name: 'Chris',
-      relationship: 'Grandson',
-      image: chris,
-      age: 10,
-      dateOfBirth: '2013-01-01',
-    },
-    {
-      id: 1,
-      name: 'Sarah',
-      relationship: 'Granddaughter',
-      image: sarah,
-      age: 12,
-      dateOfBirth: '2011-01-01',
-    },
-    {
-      id: 2,
-      name: 'Tom',
-      relationship: 'Son',
-      image: tom,
-      age: 24,
-      dateOfBirth: '1998-01-11',
-    },
-  ]
+  const [familyAndFriendsList, setFamilyAndFriendsList] = useState(list);
+  const [addButton, setAddButton] = useState(false);
+  const [relationship, setRelationship] = useState("");
+  const [name, setName] = useState("");
+  const [DOB, setDOB] = useState("");
+  const [age, setAge] = useState(null);
 
   function handleClick() {
-    setAddButton(true)
+    setAddButton(true);
   }
 
   function handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
     // Add your logic here to handle form submission
     //add data to a new object in the list array
 
     const newPerson = {
-      id: list.length,
+      id: familyAndFriendsList.length,
       name: name,
       relationship: relationship,
-      image: '',
+      image: "",
       age: age,
       dateOfBirth: DOB,
-    }
+    };
 
-    list = [...list, newPerson]
+    setFamilyAndFriendsList([...familyAndFriendsList, newPerson]);
 
-    console.log(list)
+    console.log(list);
 
-    console.log(DOB)
+    console.log(DOB);
     // Clear form fields
-    setName('')
-    setRelationship('')
-    setAddButton(false)
+    setName("");
+    setRelationship("");
+    setAddButton(false);
+    setDOB("");
+    setAge(null);
   }
 
   return (
     <>
       {!addButton && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown
         <>
-          {list.map((item) => (
+          {familyAndFriendsList.map((item) => (
             <Card
               id={item.id}
               name={item.name}
@@ -83,11 +86,11 @@ function FriendsAndFamily() {
           ))}
 
           <button
-            style={{ display: 'flex', alignItems: 'center' }}
+            style={{ display: "flex", alignItems: "center" }}
             onClick={handleClick}
           >
-            {' '}
-            Add{' '}
+            {" "}
+            Add{" "}
           </button>
         </>
       )}
@@ -95,7 +98,7 @@ function FriendsAndFamily() {
       {addButton && ( // When addButton is clicked, it is true, therefore the form will be shown
         <form onSubmit={handleSubmit}>
           <label>
-            {' '}
+            {" "}
             Name:
             <input
               type="text"
@@ -106,7 +109,7 @@ function FriendsAndFamily() {
           </label>
 
           <label>
-            {' '}
+            {" "}
             Relationship:
             <input
               type="text"
@@ -118,7 +121,7 @@ function FriendsAndFamily() {
           </label>
 
           <label>
-            {' '}
+            {" "}
             Age:
             <input
               type="number"
@@ -130,7 +133,7 @@ function FriendsAndFamily() {
           </label>
 
           <label>
-            {' '}
+            {" "}
             Date of Birth:
             <input
               type="date"
@@ -145,7 +148,7 @@ function FriendsAndFamily() {
         </form>
       )}
     </>
-  )
+  );
 }
 
-export default FriendsAndFamily
+export default FriendsAndFamily;
