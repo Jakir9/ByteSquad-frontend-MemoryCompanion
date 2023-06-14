@@ -9,9 +9,10 @@
   --main-font-family: 'Quicksand', sans-serif;  
 
 }
+
 *{
    font-family:'Quicksand'; /*Short term solution, return to add to root later. */
-  background-color: var(--main-background-color);
+  /* background-color: var(--main-background-color); */
 }
 
 .profile-pic {
