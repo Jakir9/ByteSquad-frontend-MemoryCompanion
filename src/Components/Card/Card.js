@@ -2,7 +2,7 @@ import React from 'react'
 import chris from './chris.jpeg'
 import sarah from './sarah.jpeg'
 
-function Card({ id, name, relationship, image }) {
+function Card({ id, name, relationship, image, DOB, age }) {
   return (
     <>
       <div className="fnf">
@@ -18,7 +18,7 @@ function Card({ id, name, relationship, image }) {
 
         <figcaption>
           {' '}
-          {name}, my {relationship}
+          {name}, my {relationship}, is {age} years old.{' '}
         </figcaption>
       </div>
     </>

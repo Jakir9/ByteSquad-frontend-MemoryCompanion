@@ -6,25 +6,36 @@ import sarah from './sarah.jpeg'
 import tom from './tom.jpeg'
 
 function FriendsAndFamily() {
-  const [addButton, setAddButton] = useState(false)
+  const [addButton, setAddButton] = useState(false) //
   const [relationship, setRelationship] = useState('')
   const [name, setName] = useState('')
   const [DOB, setDOB] = useState('')
   const [age, setAge] = useState(null)
 
-  const list = [
-    { id: 0, name: 'Chris', relationship: 'Grandson', image: chris },
+  let list = [
+    {
+      id: 0,
+      name: 'Chris',
+      relationship: 'Grandson',
+      image: chris,
+      age: 10,
+      dateOfBirth: '2013-01-01',
+    },
     {
       id: 1,
       name: 'Sarah',
       relationship: 'Granddaughter',
       image: sarah,
+      age: 12,
+      dateOfBirth: '2011-01-01',
     },
     {
       id: 2,
       name: 'Tom',
       relationship: 'Son',
       image: tom,
+      age: 24,
+      dateOfBirth: '1998-01-11',
     },
   ]
 
@@ -35,7 +46,22 @@ function FriendsAndFamily() {
   function handleSubmit(event) {
     event.preventDefault()
     // Add your logic here to handle form submission
+    //add data to a new object in the list array
 
+    const newPerson = {
+      id: list.length,
+      name: name,
+      relationship: relationship,
+      image: '',
+      age: age,
+      dateOfBirth: DOB,
+    }
+
+    list = [...list, newPerson]
+
+    console.log(list)
+
+    console.log(DOB)
     // Clear form fields
     setName('')
     setRelationship('')
@@ -52,6 +78,7 @@ function FriendsAndFamily() {
               name={item.name}
               relationship={item.relationship}
               image={item.image}
+              age={item.age}
             />
           ))}
 
