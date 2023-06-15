@@ -14,6 +14,9 @@ function UploadWidget({ refreshClick }) {
       },
       function (error, result) {
         console.log(result);
+        if(result.event === 'success'){
+          setTimeout(refreshClick, 10000);
+        }
       },
       []
     );

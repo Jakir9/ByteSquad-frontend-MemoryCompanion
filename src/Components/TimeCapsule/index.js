@@ -15,17 +15,21 @@ function TimeCapsule() {
         carouselStyle: "indicators", // Change to "slideshow" or "stack" if desired
         carouselLocation: 'bottom'
       });
-
       widget.render(); // Call render() separately after configuring the widget
     }
   }, []);
 
   function galleryRefresh(){
-      window.cloudinary
-        .galleryWidget({ container: containerRef.current })
-        .reload();
-
-    console.log('refreshed')
+       const widget = window.cloudinary.galleryWidget({
+         container: containerRef.current,
+         cloudName: "dcdmhdqbi", // Replace with your actual Cloudinary cloud name
+         mediaAssets: [{ tag: "gallery" }], // Replace with your desired tag or remove if not needed
+         aspectRatio: "16:9",
+         carouselStyle: "indicators", // Change to "slideshow" or "stack" if desired
+         carouselLocation: "bottom",
+       });
+    widget.render();
+    console.log('refresh called')
   }
 
 
@@ -34,7 +38,7 @@ function TimeCapsule() {
       <h1>Time Capsule</h1>
       <div className="gallery-grid" ref={containerRef} style={{ width: "1200px", margin: "auto" }} />
       <UploadWidget refreshClick={galleryRefresh} />
-      <button onClick={galleryRefresh}>refrehs</button>
+      <button onClick={galleryRefresh}>Refresh</button>
     </div>
   );
 }
