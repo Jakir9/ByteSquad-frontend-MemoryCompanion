@@ -86,11 +86,12 @@ function FriendsAndFamily() {
               handleDelete={handleDelete}
             />
           ))}
-
+            <div>
           <button className="add-button" onClick={handleClick}>
             {" "}
             Add{" "}
           </button>
+          </div>
         </>
       )}
 
@@ -135,7 +136,7 @@ function FriendsAndFamily() {
             <label>
               {" "}
               Date of Birth:
-              <input
+              <input className="input-date"
                 type="date"
                 label="Date of Birth: "
                 value={DOB}
@@ -144,7 +145,7 @@ function FriendsAndFamily() {
               />
             </label>
             <br></br>
-            <button type="submit">Submit</button>
+            <button type="submit" className="save-button">Save</button>
           </form>
         </div>
       )}

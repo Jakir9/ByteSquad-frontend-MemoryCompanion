@@ -6,21 +6,20 @@ import "./Card.css";
 function Card({ id, name, relationship, image, DOB, age, handleDelete }) {
   return (
     <>
-    <div className="fnf-page">
-      <div className="fnf">
-        <figure className="figure" style={{ width: 550 }}>
-          {" "}
+    <div className="card">
           <button className="delete-button" onClick={() => handleDelete(id)}>
             {" "}
-            X{" "}
+          X{" "}
           </button>
+      <div className="fnf">
+        <figure className="figure" style={{ width: 230 }}>
+          {" "}
           <img
-            style={{ height: 300, width: 200 }}
+            style={{ height: 230, width: 230 }}
             src={image}
             alt={name}
           />{" "}
         </figure>
-
         <figcaption className="figure-caption">
           {" "}
           Name:{name}
