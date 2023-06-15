@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+/* .upload-button, .refresh-button {background-color: #ff9b2f; color:#faf8f6} */
+
+.upload-button, .refresh-button {
+    background-color: var(--secondary-accent-colour);
+    color: var(--darkbackground-text-colour);
+    width: 175px;
+    height: 76px;
+    left: 62px;
+    top: 304px;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+ 
+  }
+
+  .upload-button:hover, .refresh-button:hover {
+    transform: translateY(-10px);
+    box-shadow: 2px 2px 10px #656059;
+  }
+
+  .page-title {
+    color: #656059;
+    font-size:60px;
+    padding: 50px;
+  }

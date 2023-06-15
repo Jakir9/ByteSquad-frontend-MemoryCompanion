@@ -58,10 +58,10 @@ function TimeCapsule() {
 
   return (
     <div>
-      <h1>Time Capsule</h1>
+      <h1 className= "page-title">Time Capsule</h1>
       <div className="gallery-grid" ref={containerRef} style={{ width: "1200px", margin: "auto" }} />
       <UploadWidget refreshClick={galleryRefresh} />
-      <button onClick={galleryRefresh}>Refresh</button>
+      <button className="refresh-button" onClick={galleryRefresh}>Refresh</button>
     </div>
   );
 }

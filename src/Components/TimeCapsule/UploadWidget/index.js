@@ -23,7 +23,7 @@ function UploadWidget({ refreshClick }) {
     
   });
     return (
-      <button onClick={(() => widgetRef.current.open())}>
+      <button className= "upload-button" onClick={(() => widgetRef.current.open())}>
         Upload
       </button>
     );
