@@ -1,0 +1,40 @@
+.card {
+  position: relative;
+  background-color: var(--main-background-colour);
+  flex-direction: column;
+  height: 50vh;
+  margin: 2rem;
+}
+
+.fnf {
+  background-color: var(--main-accent-colour);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  position: relative;
+  padding-top: 0.3rem;
+  border-radius: 1rem;
+}
+
+.figure-caption {
+  font-size: 1.5em;
+  font: var(--main-font-family);
+  background-color: var(--main-accent-colour);
+  color: var(--darkbackground-text-colour);
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.delete-button {
+  background-color: #ea5e5e;
+  color: var(--darkbackground-text-colour);
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.3rem;
+  border: none;
+}

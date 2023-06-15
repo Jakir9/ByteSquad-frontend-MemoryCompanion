@@ -23,6 +23,7 @@ function App() {
       <footer>ByteSquad</footer>
       </div>
     </Router>
+  
   );
 }
 

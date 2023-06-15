@@ -1,0 +1,50 @@
+.add-button,
+.save-button {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  padding: 10px 100px;
+  background-color: #ff9b2f;
+  color: #faf8f6;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  gap: 5px;
+  font-size: 20px;
+}
+
+.save-button {
+  padding: 10px 20px;
+  margin: 10px 40px;
+}
+
+.fnf-form {
+  background-color: var(--main-accent-colour);
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem;
+  border-radius: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-accent-colour);
+  margin: 0.5rem;
+  color: var(--darkbackground-text-colour);
+  font-size: 20px;
+}
+
+h1 {
+  color: var(--whitebackground-text-colour);
+  font-size: 30px;
+}
+input {
+  background-color: var(--main-background-color);
+  margin: 0.5rem;
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem;
+  font-size: 20px;
+  color: var(--whitebackground-text-colour);
+}
