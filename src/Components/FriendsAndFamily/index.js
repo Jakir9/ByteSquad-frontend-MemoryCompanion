@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Card from "../Card/Card";
+import "./styles.css";
 
 function FriendsAndFamily() {
   // The first useState is used for the array of friends and family.

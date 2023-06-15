@@ -6,8 +6,9 @@ import "./Card.css";
 function Card({ id, name, relationship, image, DOB, age, handleDelete }) {
   return (
     <>
+    <div className="fnf-page">
       <div className="fnf">
-        <figure className="figure" style={{ width: 250 }}>
+        <figure className="figure" style={{ width: 550 }}>
           {" "}
           <button className="delete-button" onClick={() => handleDelete(id)}>
             {" "}
@@ -30,6 +31,7 @@ function Card({ id, name, relationship, image, DOB, age, handleDelete }) {
           <br></br>
           Birthday: {DOB}
         </figcaption>
+      </div>
       </div>
     </>
   );

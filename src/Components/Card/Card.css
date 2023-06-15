@@ -1,0 +1,32 @@
+.fnf-page {
+    background-color: var(--main-background-colour);
+    flex-direction: column;
+    height: 50vh;
+    margin: 4rem
+}
+
+.fnf {
+    background-color: var(--main-accent-colour);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.figure-caption {
+    font-size: 1.5em;
+    font: var(--main-font-family);
+    background-color: var(--main-accent-colour);
+    color: var(--darkbackground-text-colour);
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.delete-button {
+    /* padding: 0.7rem; */
+    background-color: #EA5E5E;
+    color: var(--darkbackground-text-colour);
+    font-size: 2em;
+    align-self: center ;
+    width: 3rem;
+    height: 3rem;
+}
