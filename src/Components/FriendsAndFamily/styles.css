@@ -10,3 +10,21 @@
     cursor: pointer;
     gap: 5px;
 }
+
+.fnf-form {
+    background-color: var(--main-accent-colour);
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+    border-radius: 1rem;
+}
+
+label{
+    background-color: var(--main-accent-colour);
+    margin: 0.5rem;
+}
+
+h1{
+    color: var(--whitebackground-text-colour);
+    font-size: 30px;
+}

@@ -72,6 +72,7 @@ function FriendsAndFamily() {
 
   return (
     <>
+      <h1>Friends & Family</h1>
       {!addButton && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown
         <>
           {familyAndFriendsList.map((item) => (
@@ -94,56 +95,58 @@ function FriendsAndFamily() {
       )}
 
       {addButton && ( // When addButton is clicked, it is true, therefore the form will be shown
-        <form onSubmit={handleSubmit}>
-          <label>
-            {" "}
-            Name:
-            <input
-              type="text"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              placeholder="Name"
-            />
-          </label>
-
-          <label>
-            {" "}
-            Relationship:
-            <input
-              type="text"
-              label="Relationship: "
-              value={relationship}
-              onChange={(event) => setRelationship(event.target.value)}
-              placeholder="Relationship"
-            />
-          </label>
-
-          <label>
-            {" "}
-            Age:
-            <input
-              type="number"
-              label="Age: "
-              value={age}
-              onChange={(event) => setAge(event.target.value)}
-              placeholder="age"
-            />
-          </label>
-
-          <label>
-            {" "}
-            Date of Birth:
-            <input
-              type="date"
-              label="Date of Birth: "
-              value={DOB}
-              onChange={(event) => setDOB(event.target.value)}
-              placeholder="Date of Birth"
-            />
-          </label>
-
-          <button type="submit">Submit</button>
-        </form>
+        <div className="fnf-form">
+          <form className="fnf-form" onSubmit={handleSubmit}>
+            <label>
+              {" "}
+              Name:
+              <input
+                type="text"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                placeholder="Name"
+              />
+            </label>
+            <br></br>
+            <label>
+              {" "}
+              Relationship:
+              <input
+                type="text"
+                label="Relationship: "
+                value={relationship}
+                onChange={(event) => setRelationship(event.target.value)}
+                placeholder="Relationship"
+              />
+            </label>
+            <br></br>
+            <label>
+              {" "}
+              Age:
+              <input
+                type="number"
+                label="Age: "
+                value={age}
+                onChange={(event) => setAge(event.target.value)}
+                placeholder="age"
+              />
+            </label>
+            <br></br>
+            <label>
+              {" "}
+              Date of Birth:
+              <input
+                type="date"
+                label="Date of Birth: "
+                value={DOB}
+                onChange={(event) => setDOB(event.target.value)}
+                placeholder="Date of Birth"
+              />
+            </label>
+            <br></br>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       )}
     </>
   );
