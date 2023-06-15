@@ -80,6 +80,7 @@ function FriendsAndFamily() {
               relationship={item.relationship}
               image={item.image}
               age={item.age}
+              DOB={item.dateOfBirth}
               handleDelete={handleDelete}
             />
           ))}
