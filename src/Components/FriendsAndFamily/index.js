@@ -59,6 +59,16 @@ function FriendsAndFamily() {
     setAge(null);
   }
 
+  // Function to handle when the delete button is clicked on a family/friends card. It takes in the id of the person, and then filters the array to remove the person with the matching id. This is then set as the new state. This is handed down to the Card component as props.
+  function handleDelete(id) {
+    // Go through the array and find the person with the matching id
+    // Immutably update the array without the person with the matching id
+    setFamilyAndFriendsList(
+      familyAndFriendsList.filter((item) => item.id !== id)
+    );
+    console.log(familyAndFriendsList);
+  }
+
   return (
     <>
       {!addButton && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown
@@ -70,6 +80,7 @@ function FriendsAndFamily() {
               relationship={item.relationship}
               image={item.image}
               age={item.age}
+              handleDelete={handleDelete}
             />
           ))}
 
