@@ -11,9 +11,20 @@ function TimeCapsule() {
         container: containerRef.current,
         cloudName: "dcdmhdqbi", // Replace with your actual Cloudinary cloud name
         mediaAssets: [{ tag: "gallery" }], // Replace with your desired tag or remove if not needed
-        aspectRatio: '16:9',
-        carouselStyle: "indicators", // Change to "slideshow" or "stack" if desired
-        carouselLocation: 'bottom'
+        "displayProps": {
+          "mode": "expanded",
+          "columns": 3,
+          "spacing": 15
+      },
+      "zoomProps": {
+        "type": "popup",
+        "steps": 3
+    },
+      "aspectRatio": "1:1",
+      "transformation": {
+          "crop": "fill"
+      },
+      imageBreakpoint: 1000,
       });
       widget.render(); // Call render() separately after configuring the widget
     }
@@ -24,9 +35,21 @@ function TimeCapsule() {
          container: containerRef.current,
          cloudName: "dcdmhdqbi", // Replace with your actual Cloudinary cloud name
          mediaAssets: [{ tag: "gallery" }], // Replace with your desired tag or remove if not needed
-         aspectRatio: "16:9",
-         carouselStyle: "indicators", // Change to "slideshow" or "stack" if desired
-         carouselLocation: "bottom",
+         "displayProps": {
+          "mode": "expanded",
+          "columns": 3,
+          "spacing": 15
+      },
+
+      "zoomProps": {
+        "type": "popup",
+        "steps": 3
+    },
+      "aspectRatio": "1:1",
+      "transformation": {
+          "crop": "fill"
+      },
+      imageBreakpoint: 1000,
        });
     widget.render();
     console.log('refresh called')
