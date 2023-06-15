@@ -1,68 +1,56 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "../Card/Card";
-import chris from "./chris.jpeg";
-import sarah from "./sarah.jpeg";
-import tom from "./tom.jpeg";
-
-let list = [
-  {
-    id: 0,
-    name: "Chris",
-    relationship: "Grandson",
-    image: chris,
-    age: 10,
-    dateOfBirth: "2013-01-01",
-  },
-  {
-    id: 1,
-    name: "Sarah",
-    relationship: "Granddaughter",
-    image: sarah,
-    age: 12,
-    dateOfBirth: "2011-01-01",
-  },
-  {
-    id: 2,
-    name: "Tom",
-    relationship: "Son",
-    image: tom,
-    age: 24,
-    dateOfBirth: "1998-01-11",
-  },
-];
 
 function FriendsAndFamily() {
-  const [familyAndFriendsList, setFamilyAndFriendsList] = useState(list);
+  // The first useState is used for the array of friends and family.
+  const [familyAndFriendsList, setFamilyAndFriendsList] = useState([]);
+  // This block of useState is used for populate the form when a new family member is added.
   const [addButton, setAddButton] = useState(false);
   const [relationship, setRelationship] = useState("");
   const [name, setName] = useState("");
   const [DOB, setDOB] = useState("");
-  const [age, setAge] = useState(null);
+  const [age, setAge] = useState("");
 
+  // The useEffect hook is used to fetch the hardcoded family & friends data from the JSON file. This will be replaced with our database once we have hooked up the backend.
+  // It fetches the data and sets the state of familyAndFriendsList to the data. This is then mapped over in the return statement to display the data.
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch("friendsAndFamilyDB.json");
+        const data = await response.json();
+        setFamilyAndFriendsList(data);
+      } catch (error) {
+        console.error("Error fetching JSON:", error);
+        setFamilyAndFriendsList([]);
+      }
+    }
+    fetchData();
+  }, []);
+
+  // This function handles the 'add' click. It essentially set the state to true, which then renders the form.
   function handleClick() {
     setAddButton(true);
   }
 
+  // This function handles the submit button. It creates a new person object with the data from the form, and then adds it to the familyAndFriendsList array. The text capture logic is found within the form itself (event.target.value). This function then sets the state and assigns this to a new person. We can immutably add this new person to the array of family/friends. We then clear the form fields.
+  // Image is hardcoded for now, but will be replaced with a file upload feature.
   function handleSubmit(event) {
     event.preventDefault();
-    // Add your logic here to handle form submission
-    //add data to a new object in the list array
-
+    // Declare new person object and assign values from form
     const newPerson = {
       id: familyAndFriendsList.length,
       name: name,
       relationship: relationship,
-      image: "",
+      image:
+        "https://static.vecteezy.com/system/resources/previews/021/548/095/original/default-profile-picture-avatar-user-avatar-icon-person-icon-head-icon-profile-picture-icons-default-anonymous-user-male-and-female-businessman-photo-placeholder-social-network-avatar-portrait-free-vector.jpg",
       age: age,
       dateOfBirth: DOB,
     };
-
+    // Immutably update the familyAndFriendsList array
     setFamilyAndFriendsList([...familyAndFriendsList, newPerson]);
 
-    console.log(list);
-
-    console.log(DOB);
     // Clear form fields
     setName("");
     setRelationship("");
@@ -85,10 +73,7 @@ function FriendsAndFamily() {
             />
           ))}
 
-          <button
-            style={{ display: "flex", alignItems: "center" }}
-            onClick={handleClick}
-          >
+          <button className="add-button" onClick={handleClick}>
             {" "}
             Add{" "}
           </button>
