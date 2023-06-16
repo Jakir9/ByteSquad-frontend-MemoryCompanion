@@ -2,40 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-    --main-background-color: #faf8f6;
-    --main-accent-colour: #79aabd;
-    --secondary-accent-colour: #ff9b2f;
-    --whitebackground-text-colour: #656059;
-    --darkbackground-text-colour: #faf8f6;
-    --other-colour: #eaecde;
-    --other-colour2: #c2c2c2;
-    --main-font-family: 'Quicksand', sans-serif;  
-  
-  }
+  --main-background-color: #faf8f6;
+  --main-accent-colour: #79aabd;
+  --secondary-accent-colour: #ff9b2f;
+  --whitebackground-text-colour: #656059;
+  --darkbackground-text-colour: #faf8f6;
+  --other-colour: #eaecde;
+  --other-colour2: #c2c2c2;
+  --main-font-family: "Quicksand", sans-serif;
+}
 
+header {
+  background-color: #79aabd;
+  font-size: 65px;
+  color: #faf8f6;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  background-color: #79aabd;
+  width: 100px;
+  height: 100px;
+}
+
+.title {
+  background-color: #79aabd;
+  display: flex;
+  justify-content: center;
+}
+
+.logout-button {
+  background-color: #79aabd;
+  border: none;
+  color: #faf8f6;
+}
+
+@media (max-width: 768px) {
   header {
-    background-color: #79aabd; 
-    font-size: 65px;
-    color:  #faf8f6;
-    display: flex;
-    justify-content: space-between;
- 
+    font-size: 20px; /* Adjust font size for smaller screens */
   }
-
-  .logo{
-    background-color: #79aabd;
-    width:100px;
-    height: 100px;
+  .logo {
+    width: 50px;
+    height: 50px;
   }
-
-  .title{
-    background-color: #79aabd;
-    display: flex;
-    justify-content: center;
-  }
-
-  .logout-button{
-    background-color: #79aabd;
-    border: none;
-    color:  #faf8f6;
-  }
+}
