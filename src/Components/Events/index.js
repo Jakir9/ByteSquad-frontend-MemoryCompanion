@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import EventCard from '../Card/EventCard'
 
 function Events() {
   const [eventsList, setEventsList] = useState([])
@@ -47,13 +48,15 @@ function Events() {
       {!addEvent && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown, which is essentially the Card component mapped over the familyAndFriendsList array to provide a card for each person.
         <>
           <h3> list of events will be here</h3>
+
+          <EventCard />
           {/* This is what will show when we first load the page */}
+          <button className="add-event-button" onClick={handleClick}>
+            {' '}
+            Add Event
+          </button>
         </>
       )}
-      <button className="add-event-button" onClick={handleClick}>
-        {' '}
-        Add Event
-      </button>
       {addEvent && ( // When addButton is clicked, it is true, therefore the form will be shown
         <div className="event-form">
           {/* Form logic is below - This renders the form, which contains different inputs for the different information we are capturing (e.g. name, relationship.) */}
@@ -66,6 +69,7 @@ function Events() {
                 value={eventName}
                 onChange={(event) => setEventName(event.target.value)}
                 placeholder="eventName"
+                required
               />
             </label>
             <br></br>
@@ -79,6 +83,7 @@ function Events() {
                 value={dateOfEvent}
                 onChange={(event) => setDateOfEvent(event.target.value)}
                 placeholder="Date of Event"
+                required
               />
             </label>
 
@@ -92,7 +97,6 @@ function Events() {
                 value={time}
                 onChange={(event) => setTime(event.target.value)}
                 placeholder="time"
-                required
               />
             </label>
 
