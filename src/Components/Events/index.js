@@ -7,7 +7,7 @@ function Events() {
   const [addEvent, setAddEvent] = useState(false)
   const [eventName, setEventName] = useState('')
   const [dateOfEvent, setDateOfEvent] = useState('')
-  const [time, setTime] = useState('')
+  const [eventTime, setEventTime] = useState('')
 
   useEffect(() => {
     async function fetchData() {
@@ -29,27 +29,42 @@ function Events() {
       id: eventsList.length,
       eventName: eventName,
       dateOfEvent: dateOfEvent,
-      time: time,
+      eventTime: eventTime,
     }
     setEventsList([...eventsList, newEvent])
 
     setEventName('')
     setDateOfEvent('')
-    setTime('')
+    setEventTime('')
     setAddEvent(false)
   }
 
   function handleClick() {
     setAddEvent(true)
   }
+
+  // Function to handle when the delete button is clicked
+  function handleDelete(id) {
+    // Go through the array and find the person with the matching id
+    // Immutably update the array without the person with the matching id
+    setEventsList(eventsList.filter((item) => item.id !== id))
+    console.log(eventsList)
+  }
   return (
     <>
       <h1>Events</h1>
       {!addEvent && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown, which is essentially the Card component mapped over the familyAndFriendsList array to provide a card for each person.
         <>
-          <h3> list of events will be here</h3>
+          {eventsList.map((item) => (
+            <EventCard
+              id={item.id}
+              eventName={item.eventName}
+              dateOfEvent={item.dateOfEvent}
+              eventTime={item.eventTime}
+              handleDelete={handleDelete}
+            />
+          ))}
 
-          <EventCard />
           {/* This is what will show when we first load the page */}
           <button className="add-event-button" onClick={handleClick}>
             {' '}
@@ -94,9 +109,9 @@ function Events() {
               <input
                 type="time"
                 label="Time: "
-                value={time}
-                onChange={(event) => setTime(event.target.value)}
-                placeholder="time"
+                value={eventTime}
+                onChange={(event) => setEventTime(event.target.value)}
+                placeholder="eventTime"
               />
             </label>
 

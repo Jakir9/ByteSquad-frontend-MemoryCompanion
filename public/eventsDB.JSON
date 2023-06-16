@@ -1,20 +1,20 @@
 [
 
     {
-        "ID" : 0,
-"Name": "Eat Cereal",
-"Date" : "2023-06-17",
-"Time": "08:00"
+        "id" : 0,
+"eventName": "Eat Cereal",
+"dateOfEvent" : "2023-06-17",
+"eventTime": "08:00"
     },{
-        "ID" : 1,
-"Name": "Eat Lunch",
-"Date" : "2023-06-17",
-"Time": "13:00"
+        "id" : 1,
+"eventName": "Eat Lunch",
+"dateOfEvent" : "2023-06-17",
+"eventTime": "13:00"
 
-    },{  "ID" : 2,
-"Name": "Eat Dinner",
-"Date" : "2023-06-17",
-"Time": "19:00"
+    },{  "id" : 2,
+"eventName": "Eat Dinner",
+"dateOfEvent" : "2023-06-17",
+"eventTime": "19:00"
 }
 
 ]
