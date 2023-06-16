@@ -1,12 +1,38 @@
 import React from 'react'
+import {useState} from 'react'
+function Medication() {
 
-function index() {
+
+const testInput = {
+
+	name: 'Ibuprofen',
+	dosageAmount: 2,
+	schedule: 'daily',
+	dosageTime: [ '8am', '5pm']
+}
+const [medication, setMedication] = useState ([testInput]);
+
+function addMedication (newMedication) {
+  setMedication ([...medication, newMedication])
+  console.log(medication)
+}
+const testMedication = { 'name': 'Morphine', 'dosageAmount': 1, 'schedule': 'daily', 'dosageTime': [ '8am'] }
+
   return (
+    <div>
     <div>YES!!!</div>
+    <div>{medication[0].name}</div>
+    <div>{medication[0].dosageAmount}</div>
+    <div>{medication[0].schedule}</div>
+    <div>{medication[0].dosageTime[0]}</div>
+    <div>{medication[0].dosageTime[1]}</div>
+    <button onClick={() => addMedication(testMedication)}>Add Medication</button>
+    </div>
+  
   )
 }
 
-export default index
+export default Medication
 
 
 /* PLAN
@@ -26,8 +52,7 @@ so that I know if I've missed any doses.'
 
 'I want to be able to add new medication via the Add Medication button. Clicking on this should route me to the following form page.'
 
-On the form page i should be able to input the name of the medication, dosage, whether it's a daily or weekly
-schedule, and the time I need to take it.'
+On the form page i should be able to input the name of the medication, dosage, and the frequency time I need to take it.'
 
 'When I click on the 'Finalise medication' button, this should update the initial medication page with new information.'
 
