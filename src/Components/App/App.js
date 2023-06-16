@@ -20,7 +20,7 @@ function App() {
           <Route path="/events" element={<Events />}></Route>
           <Route path="/timecapsule" element={<TimeCapsule/>}></Route>
       </Routes>
-      <footer>ByteSquad</footer>
+      <footer></footer>
       </div>
     </Router>
   

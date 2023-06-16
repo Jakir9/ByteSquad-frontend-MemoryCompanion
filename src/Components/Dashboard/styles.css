@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --main-background-color: #faf8f6;
   --main-accent-colour: #79aabd;
@@ -9,9 +13,10 @@
   --main-font-family: 'Quicksand', sans-serif;  
 
 }
+
 *{
    font-family:'Quicksand'; /*Short term solution, return to add to root later. */
-  background-color: var(--main-background-color);
+  /* background-color: var(--main-background-color); */
 }
 
 .profile-pic {
