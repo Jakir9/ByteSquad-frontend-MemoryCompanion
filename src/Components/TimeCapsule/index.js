@@ -1,40 +1,48 @@
-import { useEffect, useRef } from "react";
-import UploadWidget from "./UploadWidget";
-import "./styles.css"
+import React from 'react';
+import { useState } from 'react';
+import axios from 'axios';
+import "./timecapsule.css"
 
 function TimeCapsule() {
-  const containerRef = useRef(null);
+  const preset_key = "timecapsulegallery";
+  const cloud_name = "dllyjgzpb";
+  const [images, setImages] = useState([]);
 
-  useEffect(() => {
-    if (window.cloudinary && containerRef.current) {
-      const widget = window.cloudinary.galleryWidget({
-        container: containerRef.current,
-        cloudName: "dcdmhdqbi", // Replace with your actual Cloudinary cloud name
-        mediaAssets: [{ tag: "gallery" }], // Replace with your desired tag or remove if not needed
-        aspectRatio: '16:9',
-        carouselStyle: "indicators", // Change to "slideshow" or "stack" if desired
-        carouselLocation: 'bottom'
+  function handleFile(e) {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", preset_key);
+
+    axios
+      .post(`https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`, formData)
+      .then(res => {
+        setImages(prevImages => [...prevImages, res.data.secure_url]); // Append new image URL
+      })
+      .catch(err => {
+        console.log(err);
       });
-
-      widget.render(); // Call render() separately after configuring the widget
-    }
-  }, []);
-
-  function galleryRefresh(){
-      window.cloudinary
-        .galleryWidget({ container: containerRef.current })
-        .reload();
-
-    console.log('refreshed')
   }
 
+  function handleDelete(index) {
+    setImages(prevImages => prevImages.filter((_, i) => i !== index));
+  }
 
   return (
     <div>
       <h1>Time Capsule</h1>
-      <div className="gallery-grid" ref={containerRef} style={{ width: "1200px", margin: "auto" }} />
-      <UploadWidget refreshClick={galleryRefresh} />
-      <button onClick={galleryRefresh}>refrehs</button>
+      <label htmlFor="upload-image" className="custom-file-upload">
+        Upload Image
+        <input type="file" id="upload-image" onChange={handleFile} />
+      </label>
+      <div className="grid-container"> {/* Wrap the image grid in a container */}
+        {images.map((image, index) => (
+          <div className="grid-item" key={index}> {/* Apply the grid item class */}
+            <img src={image} alt={`Image ${index}`} />
+            <button className="delete-button" onClick={() => handleDelete(index)}>Delete</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
