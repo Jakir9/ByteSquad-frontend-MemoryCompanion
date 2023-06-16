@@ -30,7 +30,7 @@ function FriendsAndFamily() {
     fetchData();
   }, []);
 
-  // This function handles the 'add' click. It essentially set the state to true, which then renders the form.
+  // This function handles the 'add' click. It essentially set the state to true, which then renders the form (conditional rendering of the form)
   function handleClick() {
     setAddButton(true);
   }
@@ -73,7 +73,7 @@ function FriendsAndFamily() {
   return (
     <>
       <h1>Friends & Family</h1>
-      {!addButton && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown
+      {!addButton && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown, which is essentially the Card component mapped over the familyAndFriendsList array to provide a card for each person.
         <>
           {familyAndFriendsList.map((item) => (
             <Card
@@ -86,17 +86,18 @@ function FriendsAndFamily() {
               handleDelete={handleDelete}
             />
           ))}
-            <div>
-          <button className="add-button" onClick={handleClick}>
-            {" "}
-            Add{" "}
-          </button>
+          <div>
+            <button className="add-button" onClick={handleClick}>
+              {" "}
+              Add{" "}
+            </button>
           </div>
         </>
       )}
 
       {addButton && ( // When addButton is clicked, it is true, therefore the form will be shown
         <div className="fnf-form">
+        {/* Form logic is below - This renders the form, which contains different inputs for the different information we are capturing (e.g. name, relationship.) */}
           <form className="fnf-form" onSubmit={handleSubmit}>
             <label>
               {" "}
@@ -129,14 +130,16 @@ function FriendsAndFamily() {
                 label="Age: "
                 value={age}
                 onChange={(event) => setAge(event.target.value)}
-                placeholder="age"
+                placeholder="Age"
+                required
               />
             </label>
             <br></br>
             <label>
               {" "}
               Date of Birth:
-              <input className="input-date"
+              <input
+                className="input-date"
                 type="date"
                 label="Date of Birth: "
                 value={DOB}
@@ -145,7 +148,9 @@ function FriendsAndFamily() {
               />
             </label>
             <br></br>
-            <button type="submit" className="save-button">Save</button>
+            <button type="submit" className="save-button">
+              Save
+            </button>
           </form>
         </div>
       )}
