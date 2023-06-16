@@ -1,8 +1,10 @@
 import React from 'react'
 import {useState} from 'react'
+import MedicationForm from './MedicationForm'
+
 function Medication() {
 
-
+// hard coded some medication data to display on screen
 const testInput = {
 
 	name: 'Ibuprofen',
@@ -10,23 +12,26 @@ const testInput = {
 	schedule: 'daily',
 	dosageTime: [ '8am', '5pm']
 }
-const [medication, setMedication] = useState ([testInput]);
+const [medication, setMedication] = useState ([testInput]);// useState hook to set the medication array // array of objects
 
 function addMedication (newMedication) {
-  setMedication ([...medication, newMedication])
+  setMedication ([...medication, newMedication]) // spread operator to add new medication to the array
   console.log(medication)
 }
-const testMedication = { 'name': 'Morphine', 'dosageAmount': 1, 'schedule': 'daily', 'dosageTime': [ '8am'] }
+// const testMedication = { 'name': 'Morphine', 'dosageAmount': 1, 'schedule': 'daily', 'dosageTime': [ '8am'] } // test medication object
+
+
 
   return (
     <div>
-    <div>YES!!!</div>
-    <div>{medication[0].name}</div>
-    <div>{medication[0].dosageAmount}</div>
-    <div>{medication[0].schedule}</div>
-    <div>{medication[0].dosageTime[0]}</div>
-    <div>{medication[0].dosageTime[1]}</div>
-    <button onClick={() => addMedication(testMedication)}>Add Medication</button>
+    <h2>Medication</h2>
+    <div>{medication[0].name}</div> {/* display medication name */}
+    <div>{medication[0].dosageAmount}</div> {/* display dosage amount */}
+    <div>{medication[0].schedule}</div> {/* display dosage schedule */}
+    <div>{medication[0].dosageTime[0]}</div> {/* display dosage time */}
+    <div>{medication[0].dosageTime[1]}</div> {/* display dosage time */}
+
+    <MedicationForm addMedication={addMedication}/> {/* pass addMedication function as a prop to the MedicationForm component */}
     </div>
   
   )
