@@ -8,9 +8,9 @@ function MedicationList({ name, dosageAmount, schedule, dosageTime, checked }) {
         <li>{name} </li>
         <li>{dosageAmount} </li>
         <li>{schedule} </li>
-        <li>{dosageTime[0]} </li>
-        <li>{dosageTime[1]} </li>
-        <li>{dosageTime[2]} </li>
+        <li>{dosageTime} </li>
+        {/* <li>{dosageTime[1]} </li>
+        <li>{dosageTime[2]} </li> */}
 
         <input type="checkbox" setChecked={checked} onChange={() => !checked} />
       </ul>

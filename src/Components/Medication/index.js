@@ -10,14 +10,14 @@ function Medication() {
       name: 'Ibuprofen',
       dosageAmount: 2,
       schedule: 'daily',
-      dosageTime: ['8am', '5pm'],
+      dosageTime: ['09:00', '17:00'],
       checked: false,
     },
     {
       name: 'Paracetomol',
       dosageAmount: 2,
       schedule: 'daily',
-      dosageTime: ['8am', '5pm'],
+      dosageTime: ['10:00', '19:00'],
       checked: false,
     },
   ]
@@ -29,74 +29,49 @@ function Medication() {
     setMedication([...medication, newMedication]) // spread operator to add new medication to the array
     console.log(medication)
   }
-  // const testMedication = { 'name': 'Morphine', 'dosageAmount': 1, 'schedule': 'daily', 'dosageTime': [ '8am'] } // test medication object
+  // create object using form data
+  const handleSubmit = (event) => {
+    event.preventDefault() // Prevents the form from refreshing the page
+    // newMedication is used to populate new object with form data
+    let newMedication = {
+      name: event.target.name.value,
+      dosageAmount: event.target.dosage.value,
+      schedule: event.target.schedule.value,
+      dosageTime: event.target.time.value,
+    }
 
-  function handleSave() {
+    addMedication(newMedication)
     setAddMedicationClicked(false)
+    console.log('added: ', medication)
   }
 
   return (
     <div>
       <h2>Medication</h2>
-      {/* Maps through testInput, generate a card (medicationList) for each medicine in the array. Pass through name, dosageAmount, schedule etc */}
-      {medication.map((item) => (
-        <MedicationList
-          name={item.name}
-          dosageAmount={item.dosageAmount}
-          schedule={item.schedule}
-          dosageTime={item.dosageTime}
-          checked={item.checked}
-        />
-      ))}
-      {/* conditionally render this form */}
-      {/* <button> Add Medication</button> */}
 
-      <button onClick={() => setAddMedicationClicked(!addMedicationClicked)}>
-        {' '}
-        Add Medication
-      </button>
-      {addMedicationClicked && (
-        <MedicationForm
-          addMedication={addMedication}
-          addMedicationClicked={addMedicationClicked}
-          handleSave={handleSave}
-        />
+      {!addMedicationClicked && (
+        <>
+          {medication.map((item) => (
+            <MedicationList
+              name={item.name}
+              dosageAmount={item.dosageAmount}
+              schedule={item.schedule}
+              dosageTime={item.dosageTime}
+              checked={item.checked}
+            />
+          ))}
+        </>
       )}
 
-      {/* pass addMedication function as a prop to the MedicationForm component */}
+      {!addMedicationClicked && (
+        <button onClick={() => setAddMedicationClicked(!addMedicationClicked)}>
+          Add Medication
+        </button>
+      )}
+
+      {addMedicationClicked && <MedicationForm handleSubmit={handleSubmit} />}
     </div>
   )
 }
 
 export default Medication
-
-/* PLAN
-
-- Medication header
--Create a card as a container
-- 'Your dosage today' header
-- Add 'Add Medication' button - this should take the user to the next page, using a router.
-
-****
-
-'As a user I want to be able to access the Medication page and have displayed all my upcoming
-medications.'
-
-'I want a checkbox feature to enable me to tick off when I take my medication,
-so that I know if I've missed any doses.'
-
-'I want to be able to add new medication via the Add Medication button. Clicking on this should route me to the following form page.'
-
-On the form page i should be able to input the name of the medication, dosage, and the frequency time I need to take it.'
-
-'When I click on the 'Finalise medication' button, this should update the initial medication page with new information.'
-
-***
-
-- Create a medication array useState, that contains medication objects:
-- Dosage amounts (integer)
-- Name (String)
-- Times (?)
-- Dosage schedule is an array of strings 
-
-*/

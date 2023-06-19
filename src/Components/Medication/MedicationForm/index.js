@@ -1,31 +1,6 @@
 import React from 'react'
 
-// create a form to add new medication
-// form should have input fields for name, dosage, schedule, dosage time
-// name should be a text input
-// dosage should be a number input
-// schedule should be a dropdown
-// dosage time should be a time input
-// create a button to submit the form
-// create a function to handle the form submission
-// stop form from refreshing page when submitted
-
-function MedicationForm({ addMedication, handleSave }) {
-  // create object using form data
-  const handleSubmit = (event) => {
-    event.preventDefault() // Prevents the form from refreshing the page
-    // newMedication is used to populate new object with form data
-    let newMedication = {
-      name: event.target.name.value,
-      dosage: event.target.dosage.value,
-      schedule: event.target.schedule.value,
-      time: event.target.time.value,
-    }
-    addMedication(newMedication)
-
-    handleSave()
-  }
-
+function MedicationForm({ handleSubmit }) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
