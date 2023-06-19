@@ -25,6 +25,7 @@ function addMedication (newMedication) {
   return (
     <div>
     <h2>Medication</h2>
+
     <div>{medication[0].name}</div> {/* display medication name */}
     <div>{medication[0].dosageAmount}</div> {/* display dosage amount */}
     <div>{medication[0].schedule}</div> {/* display dosage schedule */}
