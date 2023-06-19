@@ -1,45 +1,74 @@
 import React from 'react'
-import {useState} from 'react'
+import { useState, useEffect } from 'react'
 import MedicationForm from './MedicationForm'
+import MedicationList from './MedicationList'
 
 function Medication() {
+  // hard coded some medication data to display on screen
+  const testInput = [
+    {
+      name: 'Ibuprofen',
+      dosageAmount: 2,
+      schedule: 'daily',
+      dosageTime: ['8am', '5pm'],
+      checked: false,
+    },
+    {
+      name: 'Paracetomol',
+      dosageAmount: 2,
+      schedule: 'daily',
+      dosageTime: ['8am', '5pm'],
+      checked: false,
+    },
+  ]
 
-// hard coded some medication data to display on screen
-const testInput = {
+  const [medication, setMedication] = useState(testInput) // useState hook to set the medication array // array of objects
+  const [addMedicationClicked, setAddMedicationClicked] = useState(false)
 
-	name: 'Ibuprofen',
-	dosageAmount: 2,
-	schedule: 'daily',
-	dosageTime: [ '8am', '5pm']
-}
-const [medication, setMedication] = useState ([testInput]);// useState hook to set the medication array // array of objects
+  function addMedication(newMedication) {
+    setMedication([...medication, newMedication]) // spread operator to add new medication to the array
+    console.log(medication)
+  }
+  // const testMedication = { 'name': 'Morphine', 'dosageAmount': 1, 'schedule': 'daily', 'dosageTime': [ '8am'] } // test medication object
 
-function addMedication (newMedication) {
-  setMedication ([...medication, newMedication]) // spread operator to add new medication to the array
-  console.log(medication)
-}
-// const testMedication = { 'name': 'Morphine', 'dosageAmount': 1, 'schedule': 'daily', 'dosageTime': [ '8am'] } // test medication object
-
-
+  function handleSave() {
+    setAddMedicationClicked(false)
+  }
 
   return (
     <div>
-    <h2>Medication</h2>
+      <h2>Medication</h2>
+      {/* Maps through testInput, generate a card (medicationList) for each medicine in the array. Pass through name, dosageAmount, schedule etc */}
+      {medication.map((item) => (
+        <MedicationList
+          name={item.name}
+          dosageAmount={item.dosageAmount}
+          schedule={item.schedule}
+          dosageTime={item.dosageTime}
+          checked={item.checked}
+        />
+      ))}
+      {/* conditionally render this form */}
+      {/* <button> Add Medication</button> */}
 
-    <div>{medication[0].name}</div> {/* display medication name */}
-    <div>{medication[0].dosageAmount}</div> {/* display dosage amount */}
-    <div>{medication[0].schedule}</div> {/* display dosage schedule */}
-    <div>{medication[0].dosageTime[0]}</div> {/* display dosage time */}
-    <div>{medication[0].dosageTime[1]}</div> {/* display dosage time */}
+      <button onClick={() => setAddMedicationClicked(!addMedicationClicked)}>
+        {' '}
+        Add Medication
+      </button>
+      {addMedicationClicked && (
+        <MedicationForm
+          addMedication={addMedication}
+          addMedicationClicked={addMedicationClicked}
+          handleSave={handleSave}
+        />
+      )}
 
-    <MedicationForm addMedication={addMedication}/> {/* pass addMedication function as a prop to the MedicationForm component */}
+      {/* pass addMedication function as a prop to the MedicationForm component */}
     </div>
-  
   )
 }
 
 export default Medication
-
 
 /* PLAN
 
