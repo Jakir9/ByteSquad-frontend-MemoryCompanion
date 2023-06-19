@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* .medList{
+list-style-type: none;
+display: flex;
+justify-content: space-between;
+
+} 
+/* ul {  
+list-style-type: none;  
+display: flex;
+justify-content: space-between;
+
+}   */
+
+/* li {
+    list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+
+}  */
+
+.medList {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.medList li {
+    flex: 1;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
