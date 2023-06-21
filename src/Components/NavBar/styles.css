@@ -18,6 +18,8 @@ header {
   color: #faf8f6;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .logo {
@@ -30,6 +32,14 @@ header {
   background-color: #79aabd;
   display: flex;
   justify-content: center;
+  margin-left: 0.5rem;
+}
+
+.title h1 {
+  background-color: #79aabd;
+  color: var(--darkbackground-text-colour);
+  align-self: center;
+  margin: 0.3rem;
 }
 
 .logout-button {
@@ -38,12 +48,82 @@ header {
   color: #faf8f6;
 }
 
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--main-accent-colour);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--darkbackground-text-colour);
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+span {
+  font-size: 80px;
+  cursor: pointer;
+  margin-left: 0.6rem;
+}
+
+.logout-button {
+  font-size: 2rem;
+  margin-right: 0.6rem;
+}
+
+@media only screen and (max-width: 767px) {
+  span {
+    font-size: 1.5rem;
+    /* Set a smaller size for mobile devices */
+  }
+  .logout-button {
+    font-size: 0.9rem;
+    margin-right: 0.6rem;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 768px) {
   header {
-    font-size: 20px; /* Adjust font size for smaller screens */
+    font-size: 20px;
+    /* Adjust font size for smaller screens */
   }
+
   .logo {
-    width: 50px;
-    height: 50px;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem
   }
 }
