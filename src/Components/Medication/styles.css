@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 
 /* .medList{
@@ -27,12 +24,24 @@ justify-content: space-between;
     display: flex;
     justify-content: space-between;
     padding: 0;
+    display: grid; 
+    grid-template-columns: 2fr 0.5fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+    ". . . ."
+    ". . . ."; 
 }
 
-.medList li {
+/* .medList li {
     flex: 1;
     list-style-type: none;
     display: flex;
     justify-content: center;
     margin: 0;
+} */
+
+.time-column {
+    display: flex;
+    flex-direction: column;
 }

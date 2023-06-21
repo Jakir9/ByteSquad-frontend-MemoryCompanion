@@ -7,8 +7,7 @@ function MedicationList({ name, dosageAmount, schedule, dosageTime, checked }) {
       <ul className="medList">
         <li>{name} </li>
         <li>{dosageAmount} </li>
-        <li>{schedule} </li>
-        <li>{dosageTime} </li>
+        <li className='time-column'>{dosageTime} </li>
         {/* <li>{dosageTime[1]} </li>
         <li>{dosageTime[2]} </li> */}
 
