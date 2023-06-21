@@ -15,7 +15,7 @@ import Medication from '../Medication'
 import Events from '../Events'
 import TimeCapsule from '../TimeCapsule'
 import Login from '../Login'
-import LogoutButton from '../LogoutButton'
+import LogoutButton from '../Login/LogoutButton'
 
 function App() {
   const { isAuthenticated } = useAuth0()
