@@ -18,7 +18,7 @@ function Dashboard() {
   if (!isAuthenticated) {
     return (
       <>
-        <h1>Login Page Test - login </h1>
+        <h1>Login Page Test - dashboard </h1>
         <LoginButton />
       </>
     )
