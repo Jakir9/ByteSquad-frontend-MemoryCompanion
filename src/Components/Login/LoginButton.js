@@ -1,25 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import useHistory from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
-import styles from './styles.css'
-
-export var isLoggedIn
 
 const LoginButton = () => {
   const { loginWithRedirect, isAuthenticated } = useAuth0()
+  const history = useHistory()
 
-  isLoggedIn = isAuthenticated
+  useEffect(() => {
+    if (isAuthenticated) {
+      // User is logged in, redirect to dashboard
+      history.push('/dashboard')
+    }
+  }, [isAuthenticated, history])
 
   return (
-
-     !isAuthenticated && (
-    
-    <div className='login-buttons'>
-  <button onClick={() => loginWithRedirect()}>LOG IN</button>
-  <button onClick={() => loginWithRedirect()}>SIGN UP</button>
-  </div>
- 
+    !isAuthenticated && (
+      <div>
+        <button onClick={() => loginWithRedirect()}>Log In</button>
+        <br></br>
+        <button onClick={() => loginWithRedirect()}>Sign In</button>
+      </div>
     )
-
   )
 }
 

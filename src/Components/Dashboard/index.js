@@ -5,25 +5,8 @@ import TimeCapsuleButton from '../Buttons/TimeCapsuleButton'
 import FriendsFamilyButton from '../Buttons/Friends&FamilyButton'
 import EventsButton from '../Buttons/EventsButton'
 import MedicationButton from '../Buttons/MedicationButton'
-import { useAuth0 } from '@auth0/auth0-react'
-import LoginButton from '../Login/LoginButton'
-import LogoutButton from '../Login/LogoutButton'
-import isLoggedIn from '../Login/LoginButton'
 
 function Dashboard() {
-  const { loginWithRedirect, isAuthenticated } = useAuth0()
-
-  isLoggedIn = isAuthenticated
-
-  if (!isAuthenticated) {
-    return (
-      <>
-        <h1>Login Page Test - dashboard </h1>
-        <LoginButton />
-      </>
-    )
-  }
-
   return (
     <>
       <div className="profile-pic-section">
