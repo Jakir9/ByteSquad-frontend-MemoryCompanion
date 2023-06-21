@@ -1,10 +1,10 @@
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const LogoutButton = () => {
   const { logout, isAuthenticated } = useAuth0()
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const handleLogout = () => {
     // Prompt the user for confirmation before logging out
@@ -17,7 +17,7 @@ const LogoutButton = () => {
         alert('An error occurred during logout. Please try again.')
       })
       // Redirect the user to the /login route immediately after initiating logout
-      history.push('/login')
+      navigate('/login')
     }
   }
 

@@ -15,30 +15,64 @@ import Medication from '../Medication'
 import Events from '../Events'
 import TimeCapsule from '../TimeCapsule'
 import Login from '../Login'
-import LogoutButton from '../Login'
+import LogoutButton from '../Login/LogoutButton'
 
-function App() {
+function PrivateRoute({ element, ...rest }) {
   const { isAuthenticated } = useAuth0()
 
-  const PrivateRoute = ({ element, ...rest }) => {
-    return isAuthenticated ? (
-      <Route {...rest} element={element} />
-    ) : (
-      <Navigate to="/" />
-    )
-  }
+  return isAuthenticated ? (
+    <Route {...rest} element={element} />
+  ) : (
+    <Navigate to="/" replace />
+  )
+}
 
+function App() {
   return (
     <Router>
       <div className="App">
         <NavBar />
         <Routes>
           <Route path="/" element={<Login />} />
-          <PrivateRoute path="/dashboard" element={<Dashboard />} />
-          <PrivateRoute path="/friends&family" element={<FriendsAndFamily />} />
-          <PrivateRoute path="/medication" element={<Medication />} />
-          <PrivateRoute path="/events" element={<Events />} />
-          <PrivateRoute path="/timecapsule" element={<TimeCapsule />} />
+          <Route
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/friends&family"
+            element={
+              <PrivateRoute>
+                <FriendsAndFamily />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/medication"
+            element={
+              <PrivateRoute>
+                <Medication />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/events"
+            element={
+              <PrivateRoute>
+                <Events />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/timecapsule"
+            element={
+              <PrivateRoute>
+                <TimeCapsule />
+              </PrivateRoute>
+            }
+          />
         </Routes>
         <LogoutButton />
         <footer></footer>
