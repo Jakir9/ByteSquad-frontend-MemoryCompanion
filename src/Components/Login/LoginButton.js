@@ -1,5 +1,6 @@
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
+import styles from './styles.css'
 
 export var isLoggedIn
 
@@ -9,13 +10,16 @@ const LoginButton = () => {
   isLoggedIn = isAuthenticated
 
   return (
-    !isAuthenticated && (
-      <div>
-        <button onClick={() => loginWithRedirect()}>Log In</button>
-        <br></br>
-        <button onClick={() => loginWithRedirect()}>Sign In</button>
-      </div>
+
+     !isAuthenticated && (
+    
+    <div className='login-buttons'>
+  <button onClick={() => loginWithRedirect()}>LOG IN</button>
+  <button onClick={() => loginWithRedirect()}>SIGN UP</button>
+  </div>
+ 
     )
+
   )
 }
 
