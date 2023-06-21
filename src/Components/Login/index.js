@@ -6,9 +6,9 @@ import isLoggedIn from './LoginButton'
 //create a login landing page
 
 function Login() {
-  if (isLoggedIn) {
-    return <Dashboard />
-  }
+  // if (isLoggedIn) {
+  //   return <Dashboard />
+  // }
   return (
     <>
       <h1>Login Page Test - login </h1>
