@@ -11,10 +11,14 @@ import LogoutButton from '../Login/LogoutButton'
 import isLoggedIn from '../Login/LoginButton'
 
 function Dashboard() {
-  if (!isLoggedIn) {
+  const { loginWithRedirect, isAuthenticated } = useAuth0()
+
+  isLoggedIn = isAuthenticated
+
+  if (!isAuthenticated) {
     return (
       <>
-        <h1>Login Page Test - dashboard</h1>
+        <h1>Login Page Test - login </h1>
         <LoginButton />
       </>
     )
@@ -35,7 +39,6 @@ function Dashboard() {
         <FriendsFamilyButton />
         <EventsButton />
       </div>
-      <LogoutButton />
     </>
   )
 }
