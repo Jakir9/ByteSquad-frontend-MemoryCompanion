@@ -6,7 +6,7 @@ import LoginButton from './LoginButton'
 function Login() {
   return (
     <>
-      <h1>Login Page Test </h1>
+      <h1>Login Page Test - login </h1>
       <LoginButton />
     </>
   )

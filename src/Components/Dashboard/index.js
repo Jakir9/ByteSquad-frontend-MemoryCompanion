@@ -17,7 +17,7 @@ function Dashboard() {
   if (!isLoggedIn) {
     return (
       <>
-        <h1>Login Page Test </h1>
+        <h1>Login Page Test - dashboard</h1>
         <LoginButton />
       </>
     )
