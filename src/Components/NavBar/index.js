@@ -1,6 +1,7 @@
-import "./styles.css";
-import logo from "./header_logo.png";
-import { Link } from "react-router-dom";
+import './styles.css'
+import logo from './header_logo.png'
+import { Link } from 'react-router-dom'
+import LogoutButton from '../Login/LogoutButton'
 
 function NavBar()
 {
@@ -32,30 +33,17 @@ function NavBar()
         <Link to="/">
           <div className="title">
             <img src={logo} alt="logo" className="logo"></img>
+
             <h1> Memory Companion </h1>
           </div>{" "}
         </Link>
-        <button className="logout-button">Log Out</button>
+        {/* <button className="logout-button">Log Out</button> */}
+        <LogoutButton />
       </header>
     </div>
 
-    /* <>
-      <div id="mySidenav" className="sidenav">
-        <a href="#" className="closebtn" onClick={closeNav}>
-          &times;
-        </a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
-      </div>
-
-
-      <span onClick={openNav}>
-        &#9776;
-      </span>
-    </>  */
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar
+
