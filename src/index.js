@@ -9,7 +9,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <Auth0Provider
-      domain="dev-c06jp2f815xir0ef.us.auth0.com"
+      domain="https://byte-squad-frontend-memory-companion.vercel.app"
+      // "dev-c06jp2f815xir0ef.us.auth0.com"
       clientId="HXObmNZVevMudrJZDovmBFAjU2muJdOa"
       authorizationParams={{
         redirect_uri: window.location.origin,
