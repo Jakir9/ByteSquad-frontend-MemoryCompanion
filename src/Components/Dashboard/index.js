@@ -8,12 +8,9 @@ import MedicationButton from '../Buttons/MedicationButton'
 import { useAuth0 } from '@auth0/auth0-react'
 import LoginButton from '../Login/LoginButton'
 import LogoutButton from '../Login/LogoutButton'
-
 import isLoggedIn from '../Login/LoginButton'
 
 function Dashboard() {
-  const { isAuthenticated, user } = useAuth0()
-
   if (!isLoggedIn) {
     return (
       <>
