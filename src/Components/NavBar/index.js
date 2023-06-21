@@ -1,7 +1,7 @@
 import './styles.css'
 import logo from './header_logo.png'
 import { Link } from 'react-router-dom'
-
+import LogoutButton from '../Login/LogoutButton'
 
 function NavBar() {
   return (
@@ -14,7 +14,8 @@ function NavBar() {
             Memory Companion{' '}
           </div>{' '}
         </Link>
-        <button className="logout-button">Log Out</button>
+        {/* <button className="logout-button">Log Out</button> */}
+        <LogoutButton />
       </header>
     </div>
   )
