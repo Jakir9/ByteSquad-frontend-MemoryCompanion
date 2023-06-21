@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 
-const LoginButton = () => {
+const SignupButton = () => {
   const { loginWithRedirect, isAuthenticated } = useAuth0()
   const navigate = useNavigate()
 
@@ -13,15 +13,13 @@ const LoginButton = () => {
     }
   }, [isAuthenticated, navigate])
 
-  return (
-    !isAuthenticated && (
+  if (!isAuthenticated) {
+    return (
       <div>
-        <button onClick={() => loginWithRedirect()}>Log In</button>
-        <br />
-        <button onClick={() => loginWithRedirect()}>Sign In</button>
+        <button onClick={() => loginWithRedirect()}>Sign Up</button>
       </div>
     )
-  )
+  }
 }
 
-export default LoginButton
+export default SignupButton

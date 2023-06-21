@@ -1,12 +1,14 @@
-import React, { Component } from 'react'
-import LoginButton from './LoginButton'
+import React from 'react'
+import LoginButton from '../LoginButton/LoginButton'
+import SignupButton from '../Signup/Signup'
 
-//create a login landing page
+//Login landing page
 function Login() {
   return (
     <>
-      <h1>Login Page Test </h1>
+      <h1>Login Page</h1>
       <LoginButton />
+      <SignupButton />
     </>
   )
 }
