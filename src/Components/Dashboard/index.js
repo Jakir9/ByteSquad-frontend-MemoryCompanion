@@ -7,14 +7,20 @@ import EventsButton from '../Buttons/EventsButton'
 import MedicationButton from '../Buttons/MedicationButton'
 import { useAuth0 } from '@auth0/auth0-react'
 import LoginButton from '../Login/LoginButton'
-import LogoutButton from '../Login/LoginButton'
+import LogoutButton from '../Login/LogoutButton'
+
+import isLoggedIn from '../Login/LoginButton'
 
 function Dashboard() {
   const { isAuthenticated, user } = useAuth0()
 
-  if (!isAuthenticated) {
-    // User is not logged in, render a login button
-    return <LoginButton />
+  if (!isLoggedIn) {
+    return (
+      <>
+        <h1>Login Page Test </h1>
+        <LoginButton />
+      </>
+    )
   }
 
   return (
@@ -23,7 +29,7 @@ function Dashboard() {
         <img className="profile-pic" src={ProfilePic} alt="Profile Image" />
       </div>
       <div className="dashboard-message">
-        <h2>Welcome, {user.name}</h2>
+        <h2>Welcome, user name</h2>
         <p>This is where we will include further information for the user</p>
       </div>
       <div className="button-container">
