@@ -1,19 +1,28 @@
-import React, { Component } from 'react'
-import LoginButton from './LoginButton'
-import Dashboard from '../Dashboard/index.js'
-import isLoggedIn from './LoginButton'
+import React from 'react'
+import { useAuth0 } from '@auth0/auth0-react'
+import { useNavigate } from 'react-router-dom'
 
-//create a login landing page
+const Login = () => {
+  const { loginWithRedirect, isAuthenticated } = useAuth0()
+  const navigate = useNavigate()
 
-function Login() {
-  // if (isLoggedIn) {
-  //   return <Dashboard />
-  // }
+  const handleLogin = () => {
+    loginWithRedirect()
+  }
+
+  // Check if the user is already authenticated, and if so, redirect to the dashboard
+  React.useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/dashboard')
+    }
+  }, [isAuthenticated, navigate])
+
   return (
-    <>
-      <h1>Login Page Test - login </h1>
-      <LoginButton />
-    </>
+    <div>
+      <h2>Login Page</h2>
+      <button onClick={handleLogin}>Log In</button>
+    </div>
   )
 }
+
 export default Login
