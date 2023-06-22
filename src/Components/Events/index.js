@@ -1,8 +1,22 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import EventCard from '../Card/EventCard'
+import { useAuth0 } from '@auth0/auth0-react'
+import { useNavigate } from 'react-router'
 
 function Events() {
+  // auth0 code
+  const { isAuthenticated } = useAuth0()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      // User is logged in, redirect to dashboard
+      navigate('/login')
+    }
+  }, [isAuthenticated, navigate])
+  // end auth0 code
+
   const [eventsList, setEventsList] = useState([])
   const [addEvent, setAddEvent] = useState(false)
   const [eventName, setEventName] = useState('')
@@ -52,6 +66,7 @@ function Events() {
   }
   return (
     <>
+      isAuthenticated &&(
       <h1>Events</h1>
       {!addEvent && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown, which is essentially the Card component mapped over the familyAndFriendsList array to provide a card for each person.
         <>
@@ -122,6 +137,7 @@ function Events() {
           </form>
         </div>
       )}
+      )
     </>
   )
 }
