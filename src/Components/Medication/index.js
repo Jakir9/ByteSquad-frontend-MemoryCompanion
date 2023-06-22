@@ -47,11 +47,18 @@ function Medication() {
 
   return (
     <main>
-      <h2>Medication</h2>
+      <h2 className="medication-header">MEDICATION</h2>
 
       <div className="medication-container">
         <h1 className='dosage-title'>Your Dosage Today</h1>
-        <div className="medication-container-white">
+        <table className="medication-table">
+      <tr>
+      <th>Medication</th>
+      <th>Dosage</th>
+      <th>Time</th>
+      <th>Taken</th>
+      </tr>
+
           {!addMedicationClicked && (
             <>
               {medication.map((item) => (
@@ -65,11 +72,12 @@ function Medication() {
               ))}
             </>
           )}
+          </table>
         </div>
-      </div>
+      
 
       {!addMedicationClicked && (
-        <button onClick={() => setAddMedicationClicked(!addMedicationClicked)}>
+        <button className= "add-med-button" onClick={() => setAddMedicationClicked(!addMedicationClicked)}>
           Add Medication
         </button>
       )}

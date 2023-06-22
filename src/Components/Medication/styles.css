@@ -18,6 +18,14 @@ justify-content: space-between;
 
 }  */
 
+/* --main-background-color: #FAF8F6;
+  --main-accent-colour: #79AABD;
+  --secondary-accent-colour: #FF9B2F;
+  --whitebackground-text-colour: #656059;
+  --darkbackground-text-colour: #FAF8F6;
+  --other-colour: #EAECDE;
+  --other-colour2: #C2C2C2; */
+
 main {
   display: flex;
   flex-direction: column;
@@ -30,7 +38,8 @@ main {
   background-color: var(--main-accent-colour);
   width: 60%;
   padding: 1rem;
-  border-radius: 2rem;
+  border-radius: 0.75rem;
+  color: var(--whitebackground-text-colour);
 }
 
 .medList {
@@ -48,6 +57,14 @@ main {
     ". . . .";
 }
 
+.medication-header {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--whitebackground-text-colour);
+  padding: 1rem;
+  padding-bottom: 2rem;
+}
+
 .dosage-title{
   font-size: 2.5rem;
   font-weight: bold;
@@ -59,7 +76,55 @@ main {
 .medication-container-white {
   background-color: var(--main-background-color);
   border-radius: 1.5rem;
+
 }
+
+.medication-table {
+
+  background-color: var(--main-background-color);
+  width: 100%;
+  border-radius: 0.5rem;
+  
+  
+}
+/* td {
+  padding: 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--whitebackground-text-colour);
+  border: 1px solid var(--whitebackground-text-colour);
+  
+    
+} */
+
+table {
+    border-collapse: collapse;
+  }
+  
+  table td {
+    border: 2px solid var(--whitebackground-text-colour);
+    padding: 10px;
+  
+  
+    
+    
+  }
+  
+  table tr:first-child td {
+    border-top: none;
+
+  }
+  
+  table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  table td:first-child {
+    border-left: none;
+  }
+  table td:last-child {
+    border-right: none;
+  }
 
 /* .medList li {
     flex: 1;
@@ -73,3 +138,28 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 768px) {
+    .medication-container {
+        width: 95%;
+    }
+    }
+
+    .add-med-button {
+        background-color: var(--secondary-accent-colour);
+        color: var(--darkbackground-text-colour);
+        width: 175px;
+        height: 76px;
+        left: 62px;
+        top: 304px;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 30px;
+        border: none;
+     
+      }
+    
+      .upload-button:hover, .refresh-button:hover {
+        transform: translateY(-10px);
+        box-shadow: 2px 2px 10px #656059;
+      }
