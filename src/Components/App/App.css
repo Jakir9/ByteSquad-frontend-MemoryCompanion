@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .root{
@@ -12,6 +13,9 @@
   --other-colour2: #C2C2C2;
 }
 
+input {
+  color:black
+}
 /* footer{
   background-color: #C2C2C2;
   display:flex;

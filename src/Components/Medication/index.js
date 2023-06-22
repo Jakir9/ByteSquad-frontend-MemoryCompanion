@@ -2,8 +2,22 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import MedicationForm from './MedicationForm'
 import MedicationList from './MedicationList'
+import { useAuth0 } from '@auth0/auth0-react'
+import { useNavigate } from 'react-router'
 
 function Medication() {
+  // auth0 code
+  const { isAuthenticated } = useAuth0()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      // User is logged in, redirect to dashboard
+      navigate('/login')
+    }
+  }, [isAuthenticated, navigate])
+  // end auth0 code
+
   // hard coded some medication data to display on screen
   const testInput = [
     {
@@ -46,6 +60,8 @@ function Medication() {
   }
 
   return (
+
+        isAuthenticated && (
     <main>
       <h2 className="medication-header">MEDICATION</h2>
 
@@ -84,6 +100,7 @@ function Medication() {
 
       {addMedicationClicked && <MedicationForm handleSubmit={handleSubmit} />}
     </main>
+       )
   );
 }
 

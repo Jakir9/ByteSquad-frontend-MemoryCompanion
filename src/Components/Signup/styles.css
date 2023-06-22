@@ -1,3 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.login-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+}
+
+
+.login-buttons button {
+    background-color: var(--secondary-accent-colour);
+    color: var(--darkbackground-text-colour);
+    width: 8rem;
+    height: 2rem;
+    left: 62px;
+    top: 304px;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 0.8rem;
+    border: none;
+}
