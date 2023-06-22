@@ -23,9 +23,11 @@ const LogoutButton = () => {
 
   return (
     isAuthenticated && (
-      <button onClick={handleLogout} aria-label="Log out">
-        Log out
-      </button>
+      <div>
+        <button onClick={handleLogout} aria-label="Log out">
+          Log out
+        </button>
+      </div>
     )
   )
 }

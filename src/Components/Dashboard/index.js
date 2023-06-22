@@ -5,6 +5,7 @@ import TimeCapsuleButton from '../Buttons/TimeCapsuleButton'
 import FriendsFamilyButton from '../Buttons/Friends&FamilyButton'
 import EventsButton from '../Buttons/EventsButton'
 import MedicationButton from '../Buttons/MedicationButton'
+import Profile from '../Profile/Profile'
 
 function Dashboard() {
   return (
@@ -13,8 +14,8 @@ function Dashboard() {
         <img className="profile-pic" src={ProfilePic} alt="Profile Image" />
       </div>
       <div className="dashboard-message">
-        <h2>Welcome, user name</h2>
-        <p>This is where we will include further information for the user</p>
+        {/* This <Profile/> contains user's name and welcome message*/}
+        <Profile />
       </div>
       <div className="button-container">
         <TimeCapsuleButton />
