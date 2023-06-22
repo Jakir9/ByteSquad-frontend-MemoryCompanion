@@ -23,23 +23,23 @@ function Dashboard() {
     }
   }, [isAuthenticated, navigate])
   return (
-    <>
-      isAuthenticated && (
-      <div className="profile-pic-section">
-        <img className="profile-pic" src={ProfilePic} alt="Profile Image" />
-      </div>
-      <div className="dashboard-message">
-        {/* This <Profile/> contains user's name and welcome message*/}
-        <Profile />
-      </div>
-      <div className="button-container">
-        <TimeCapsuleButton />
-        <MedicationButton />
-        <FriendsFamilyButton />
-        <EventsButton />
-      </div>
-      )
-    </>
+    isAuthenticated && (
+      <>
+        <div className="profile-pic-section">
+          <img className="profile-pic" src={ProfilePic} alt="Profile Image" />
+        </div>
+        <div className="dashboard-message">
+          {/* This <Profile/> contains user's name and welcome message*/}
+          <Profile />
+        </div>
+        <div className="button-container">
+          <TimeCapsuleButton />
+          <MedicationButton />
+          <FriendsFamilyButton />
+          <EventsButton />
+        </div>
+      </>
+    )
   )
 }
 
