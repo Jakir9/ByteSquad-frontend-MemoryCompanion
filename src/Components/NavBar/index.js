@@ -5,11 +5,12 @@ import LogoutButton from '../Logout/LogoutButton'
 
 function NavBar() {
   function openNav() {
-    document.getElementById('mySidenav').style.width = '250px'
+
+    document.getElementById("mySidenav").style.width = "250px";
   }
 
   function closeNav() {
-    document.getElementById('mySidenav').style.width = '0'
+    document.getElementById("mySidenav").style.width = "0";
   }
   return (
     <div>
@@ -21,6 +22,8 @@ function NavBar() {
           <a href="#" className="closebtn" onClick={closeNav}>
             &times;
           </a>
+
+          <Link to="/">Dashboard</Link>
           <Link to="/dashboard">Dashboard</Link>
           <Link to="/timecapsule">Time Capsule</Link>
           <Link to="/medication">Medication</Link>
@@ -31,7 +34,6 @@ function NavBar() {
         <Link to="/">
           <div className="title">
             <img src={logo} alt="logo" className="logo"></img>
-
             <h1> Memory Companion </h1>
           </div>{' '}
         </Link>
@@ -39,7 +41,9 @@ function NavBar() {
         <LogoutButton />
       </header>
     </div>
+
   )
 }
 
 export default NavBar
+

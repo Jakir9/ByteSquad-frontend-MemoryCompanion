@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
   --main-background-color: #faf8f6;
   --main-accent-colour: #79aabd;
@@ -19,7 +20,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+
 }
 
 .logo {
@@ -104,6 +105,13 @@ span {
   }
 }
 
+  .logout-button {
+    font-size: 0.9rem;
+    margin-right: 0.6rem;
+  }
+}
+
+
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
@@ -126,4 +134,6 @@ span {
     margin-top: 0.2rem;
     margin-bottom: 0.2rem
   }
+
 }
+

@@ -24,14 +24,14 @@ function Medication() {
       name: 'Ibuprofen',
       dosageAmount: 2,
       schedule: 'daily',
-      dosageTime: ['09:00', '17:00'],
+      dosageTime: '09:00',
       checked: false,
     },
     {
       name: 'Paracetomol',
       dosageAmount: 2,
       schedule: 'daily',
-      dosageTime: ['10:00', '19:00'],
+      dosageTime: '10:00',
       checked: false,
     },
   ]
@@ -60,36 +60,48 @@ function Medication() {
   }
 
   return (
-    isAuthenticated && (
-      <div>
-        <h2>Medication</h2>
 
-        {!addMedicationClicked && (
-          <>
-            {medication.map((item) => (
-              <MedicationList
-                name={item.name}
-                dosageAmount={item.dosageAmount}
-                schedule={item.schedule}
-                dosageTime={item.dosageTime}
-                checked={item.checked}
-              />
-            ))}
-          </>
-        )}
+        isAuthenticated && (
+    <main>
+      <h2 className="medication-header">MEDICATION</h2>
 
-        {!addMedicationClicked && (
-          <button
-            onClick={() => setAddMedicationClicked(!addMedicationClicked)}
-          >
-            Add Medication
-          </button>
-        )}
+      <div className="medication-container">
+        <h1 className='dosage-title'>Your Dosage Today</h1>
+        <table className="medication-table">
+      <tr>
+      <th>Medication</th>
+      <th>Dosage</th>
+      <th>Time</th>
+      <th>Taken</th>
+      </tr>
 
-        {addMedicationClicked && <MedicationForm handleSubmit={handleSubmit} />}
-      </div>
-    )
-  )
+          {!addMedicationClicked && (
+            <>
+              {medication.map((item) => (
+                <MedicationList
+                  name={item.name}
+                  dosageAmount={item.dosageAmount}
+                  schedule={item.schedule}
+                  dosageTime={item.dosageTime}
+                  checked={item.checked}
+                />
+              ))}
+            </>
+          )}
+          </table>
+        </div>
+      
+
+      {!addMedicationClicked && (
+        <button className= "add-med-button" onClick={() => setAddMedicationClicked(!addMedicationClicked)}>
+          Add Medication
+        </button>
+      )}
+
+      {addMedicationClicked && <MedicationForm handleSubmit={handleSubmit} />}
+    </main>
+       )
+  );
 }
 
 export default Medication
