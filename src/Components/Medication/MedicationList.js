@@ -3,7 +3,6 @@ import './styles.css'
 
 function MedicationList({ name, dosageAmount, schedule, dosageTime, checked }) {
   return (
-    <div>
       <ul className="medList">
         <li>{name} </li>
         <li>{dosageAmount} </li>
@@ -13,7 +12,6 @@ function MedicationList({ name, dosageAmount, schedule, dosageTime, checked }) {
 
         <input type="checkbox" setChecked={checked} onChange={() => !checked} />
       </ul>
-    </div>
   )
 }
 
