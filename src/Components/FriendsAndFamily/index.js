@@ -2,8 +2,22 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Card from '../Card/Card'
 import './styles.css'
+import { useAuth0 } from '@auth0/auth0-react'
+import { useNavigate } from 'react-router'
 
 function FriendsAndFamily() {
+  // auth0 code
+  const { isAuthenticated } = useAuth0()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      // User is logged in, redirect to dashboard
+      navigate('/login')
+    }
+  }, [isAuthenticated, navigate])
+  // end auth0 code
+
   // The first useState is used for the array of friends and family.
   const [familyAndFriendsList, setFamilyAndFriendsList] = useState([])
   // This block of useState is used for populate the form when a new family member is added.
@@ -72,7 +86,7 @@ function FriendsAndFamily() {
 
   return (
     <>
-      <h1>Friends & Family</h1>
+      isAuthenticated && (<h1>Friends & Family</h1>
       {!addButton && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown, which is essentially the Card component mapped over the familyAndFriendsList array to provide a card for each person.
         <>
           {familyAndFriendsList.map((item) => (
@@ -94,7 +108,6 @@ function FriendsAndFamily() {
           </div>
         </>
       )}
-
       {addButton && ( // When addButton is clicked, it is true, therefore the form will be shown
         <div className="fnf-form">
           {/* Form logic is below - This renders the form, which contains different inputs for the different information we are capturing (e.g. name, relationship.) */}
@@ -154,6 +167,7 @@ function FriendsAndFamily() {
           </form>
         </div>
       )}
+      )
     </>
   )
 }

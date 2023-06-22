@@ -2,8 +2,22 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import MedicationForm from './MedicationForm'
 import MedicationList from './MedicationList'
+import { useAuth0 } from '@auth0/auth0-react'
+import { useNavigate } from 'react-router'
 
 function Medication() {
+  // auth0 code
+  const { isAuthenticated } = useAuth0()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      // User is logged in, redirect to dashboard
+      navigate('/login')
+    }
+  }, [isAuthenticated, navigate])
+  // end auth0 code
+
   // hard coded some medication data to display on screen
   const testInput = [
     {
@@ -46,31 +60,35 @@ function Medication() {
   }
 
   return (
-    <div>
-      <h2>Medication</h2>
+    isAuthenticated && (
+      <div>
+        <h2>Medication</h2>
 
-      {!addMedicationClicked && (
-        <>
-          {medication.map((item) => (
-            <MedicationList
-              name={item.name}
-              dosageAmount={item.dosageAmount}
-              schedule={item.schedule}
-              dosageTime={item.dosageTime}
-              checked={item.checked}
-            />
-          ))}
-        </>
-      )}
+        {!addMedicationClicked && (
+          <>
+            {medication.map((item) => (
+              <MedicationList
+                name={item.name}
+                dosageAmount={item.dosageAmount}
+                schedule={item.schedule}
+                dosageTime={item.dosageTime}
+                checked={item.checked}
+              />
+            ))}
+          </>
+        )}
 
-      {!addMedicationClicked && (
-        <button onClick={() => setAddMedicationClicked(!addMedicationClicked)}>
-          Add Medication
-        </button>
-      )}
+        {!addMedicationClicked && (
+          <button
+            onClick={() => setAddMedicationClicked(!addMedicationClicked)}
+          >
+            Add Medication
+          </button>
+        )}
 
-      {addMedicationClicked && <MedicationForm handleSubmit={handleSubmit} />}
-    </div>
+        {addMedicationClicked && <MedicationForm handleSubmit={handleSubmit} />}
+      </div>
+    )
   )
 }
 
