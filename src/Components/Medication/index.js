@@ -60,36 +60,34 @@ function Medication() {
   }
 
   return (
-    isAuthenticated && (
-      <div>
-        <h2>Medication</h2>
+    // isAuthenticated && (
+    <div>
+      <h2>Medication</h2>
 
-        {!addMedicationClicked && (
-          <>
-            {medication.map((item) => (
-              <MedicationList
-                name={item.name}
-                dosageAmount={item.dosageAmount}
-                schedule={item.schedule}
-                dosageTime={item.dosageTime}
-                checked={item.checked}
-              />
-            ))}
-          </>
-        )}
+      {!addMedicationClicked && (
+        <>
+          {medication.map((item) => (
+            <MedicationList
+              name={item.name}
+              dosageAmount={item.dosageAmount}
+              schedule={item.schedule}
+              dosageTime={item.dosageTime}
+              checked={item.checked}
+            />
+          ))}
+        </>
+      )}
 
-        {!addMedicationClicked && (
-          <button
-            onClick={() => setAddMedicationClicked(!addMedicationClicked)}
-          >
-            Add Medication
-          </button>
-        )}
+      {!addMedicationClicked && (
+        <button onClick={() => setAddMedicationClicked(!addMedicationClicked)}>
+          Add Medication
+        </button>
+      )}
 
-        {addMedicationClicked && <MedicationForm handleSubmit={handleSubmit} />}
-      </div>
-    )
+      {addMedicationClicked && <MedicationForm handleSubmit={handleSubmit} />}
+    </div>
   )
+  // )
 }
 
 export default Medication
