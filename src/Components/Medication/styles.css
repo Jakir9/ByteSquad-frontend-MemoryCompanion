@@ -34,6 +34,7 @@ main {
 }
 
 .medList {
+  
   display: flex;
   justify-content: space-between;
   padding: 0;
@@ -58,9 +59,6 @@ main {
 .medication-container-white {
   background-color: var(--main-background-color);
   border-radius: 1.5rem;
-}
-
-.medication-container-white{
 }
 
 /* .medList li {
