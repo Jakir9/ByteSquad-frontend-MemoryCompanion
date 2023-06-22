@@ -85,92 +85,92 @@ function FriendsAndFamily() {
   }
 
   return (
-    // isAuthenticated && (
-    <>
-      <h1>Friends & Family</h1>
-      {!addButton && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown, which is essentially the Card component mapped over the familyAndFriendsList array to provide a card for each person.
-        <>
-          {familyAndFriendsList.map((item) => (
-            <Card
-              id={item.id}
-              name={item.name}
-              relationship={item.relationship}
-              image={item.image}
-              age={item.age}
-              DOB={item.dateOfBirth}
-              handleDelete={handleDelete}
-            />
-          ))}
-          <div>
-            <button className="add-button" onClick={handleClick}>
-              {' '}
-              Add{' '}
-            </button>
+    isAuthenticated && (
+      <>
+        <h1>Friends & Family</h1>
+        {!addButton && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown, which is essentially the Card component mapped over the familyAndFriendsList array to provide a card for each person.
+          <>
+            {familyAndFriendsList.map((item) => (
+              <Card
+                id={item.id}
+                name={item.name}
+                relationship={item.relationship}
+                image={item.image}
+                age={item.age}
+                DOB={item.dateOfBirth}
+                handleDelete={handleDelete}
+              />
+            ))}
+            <div>
+              <button className="add-button" onClick={handleClick}>
+                {' '}
+                Add{' '}
+              </button>
+            </div>
+          </>
+        )}
+        {addButton && ( // When addButton is clicked, it is true, therefore the form will be shown
+          <div className="fnf-form">
+            {/* Form logic is below - This renders the form, which contains different inputs for the different information we are capturing (e.g. name, relationship.) */}
+            <form className="fnf-form" onSubmit={handleSubmit}>
+              <label>
+                {' '}
+                Name:
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
+                  placeholder="Name"
+                />
+              </label>
+              <br></br>
+              <label>
+                {' '}
+                Relationship:
+                <input
+                  type="text"
+                  label="Relationship: "
+                  value={relationship}
+                  onChange={(event) => setRelationship(event.target.value)}
+                  placeholder="Relationship"
+                />
+              </label>
+              <br></br>
+              <label>
+                {' '}
+                Age:
+                <input
+                  type="number"
+                  label="Age: "
+                  value={age}
+                  onChange={(event) => setAge(event.target.value)}
+                  placeholder="Age"
+                  required
+                />
+              </label>
+              <br></br>
+              <label>
+                {' '}
+                Date of Birth:
+                <input
+                  className="input-date"
+                  type="date"
+                  label="Date of Birth: "
+                  value={DOB}
+                  onChange={(event) => setDOB(event.target.value)}
+                  placeholder="Date of Birth"
+                />
+              </label>
+              <br></br>
+              <button type="submit" className="save-button">
+                Save
+              </button>
+            </form>
           </div>
-        </>
-      )}
-      {addButton && ( // When addButton is clicked, it is true, therefore the form will be shown
-        <div className="fnf-form">
-          {/* Form logic is below - This renders the form, which contains different inputs for the different information we are capturing (e.g. name, relationship.) */}
-          <form className="fnf-form" onSubmit={handleSubmit}>
-            <label>
-              {' '}
-              Name:
-              <input
-                type="text"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-                placeholder="Name"
-              />
-            </label>
-            <br></br>
-            <label>
-              {' '}
-              Relationship:
-              <input
-                type="text"
-                label="Relationship: "
-                value={relationship}
-                onChange={(event) => setRelationship(event.target.value)}
-                placeholder="Relationship"
-              />
-            </label>
-            <br></br>
-            <label>
-              {' '}
-              Age:
-              <input
-                type="number"
-                label="Age: "
-                value={age}
-                onChange={(event) => setAge(event.target.value)}
-                placeholder="Age"
-                required
-              />
-            </label>
-            <br></br>
-            <label>
-              {' '}
-              Date of Birth:
-              <input
-                className="input-date"
-                type="date"
-                label="Date of Birth: "
-                value={DOB}
-                onChange={(event) => setDOB(event.target.value)}
-                placeholder="Date of Birth"
-              />
-            </label>
-            <br></br>
-            <button type="submit" className="save-button">
-              Save
-            </button>
-          </form>
-        </div>
-      )}
-    </>
+        )}
+      </>
+    )
   )
-  // )
 }
 
 export default FriendsAndFamily
