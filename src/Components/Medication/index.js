@@ -10,14 +10,14 @@ function Medication() {
       name: 'Ibuprofen',
       dosageAmount: 2,
       schedule: 'daily',
-      dosageTime: ['09:00', '17:00'],
+      dosageTime: '09:00',
       checked: false,
     },
     {
       name: 'Paracetomol',
       dosageAmount: 2,
       schedule: 'daily',
-      dosageTime: ['10:00', '19:00'],
+      dosageTime: '10:00',
       checked: false,
     },
   ]
