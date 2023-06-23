@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Card from '../Card/Card'
+import FileUpload from '../Upload/upload'
 import './styles.css'
 
 function FriendsAndFamily() {
@@ -151,6 +152,7 @@ function FriendsAndFamily() {
             <button type="submit" className="save-button">
               Save
             </button>
+            <FileUpload />
           </form>
         </div>
       )}
