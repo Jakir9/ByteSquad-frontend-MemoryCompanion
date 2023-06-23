@@ -20,7 +20,7 @@ function MedicationForm({ handleSubmit }) {
           <input type="time" name="time" />
         </label>
      
-        <input type="submit" value="Submit" />
+        <button className="submit-med-button" type="submit" value="Submit">Submit</button>
       </form>
     </div>
   )

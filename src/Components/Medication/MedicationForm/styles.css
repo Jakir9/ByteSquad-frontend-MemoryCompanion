@@ -20,3 +20,17 @@
   gap: 5px;
   font-size: 20px;
 }
+
+.submit-med-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 100px;
+    background-color: #ff9b2f;
+    color: #faf8f6;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    gap: 5px;
+    font-size: 20px;
+}
