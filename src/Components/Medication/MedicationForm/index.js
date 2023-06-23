@@ -1,10 +1,12 @@
 import React from 'react'
+import './styles.css'
 
 function MedicationForm({ handleSubmit }) {
   return (
-    <div>
+    <div className="medication-form">
       <form onSubmit={handleSubmit}>
-        <label>
+      
+        <label className="">
           Name:
           <input type="text" name="name" />
         </label>
@@ -12,17 +14,12 @@ function MedicationForm({ handleSubmit }) {
           Dosage:
           <input type="number" name="dosage" />
         </label>
-        <label>
-          Schedule:
-          <select name="schedule">
-            <option value="daily">Daily</option>
-            <option value="weekly">Weekly</option>
-          </select>
-        </label>
+       
         <label>
           Time:
           <input type="time" name="time" />
         </label>
+     
         <input type="submit" value="Submit" />
       </form>
     </div>

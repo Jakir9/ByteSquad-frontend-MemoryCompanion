@@ -1,0 +1,22 @@
+.medication-form {
+    background-color: var(--main-accent-colour);
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .add-button,
+.save-button {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  padding: 10px 100px;
+  background-color: #ff9b2f;
+  color: #faf8f6;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  gap: 5px;
+  font-size: 20px;
+}
