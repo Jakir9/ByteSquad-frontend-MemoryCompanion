@@ -1,8 +1,12 @@
 import React from 'react'
+import "./styles.css";
 import { useAuth0 } from '@auth0/auth0-react'
 import { useNavigate } from 'react-router-dom'
 
-const LogoutButton = () => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+
+const LogoutButton = ({id}) => {
   const { logout, isAuthenticated } = useAuth0()
   const navigate = useNavigate()
 
@@ -21,15 +25,30 @@ const LogoutButton = () => {
     }
   }
 
+  //If not authticated, returns a ogin/Sign Up button instead
+
+  if (!isAuthenticated) {
+    return (<div className='nav-padder'></div>) // Return null to render nothing when the user is not authenticated
+  }
+
   return (
     isAuthenticated && (
       <div>
-        <button onClick={handleLogout} aria-label="Log out">
+        <button
+          onClick={handleLogout}
+          aria-label="Log out"
+          className="navbar-logout-button"
+          id={id}
+        >
+          <FontAwesomeIcon
+            icon={faRightFromBracket}
+            style={{ color: "#faf8f6" }}
+          />
           Log out
         </button>
       </div>
     )
-  )
+  );
 }
 
 export default LogoutButton

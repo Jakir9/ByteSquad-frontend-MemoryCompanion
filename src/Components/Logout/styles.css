@@ -1,0 +1,34 @@
+.navbar-logout-button {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--darkbackground-text-colour);
+  width: 12rem;
+  height: 5rem;
+  left: 62px;
+  top: 304px;
+  margin: 10px;
+  font-size: 1.9rem;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-logout-button:hover {
+  filter: brightness(200%);
+}
+
+.nav-padder{
+  width: 12rem;
+}
+
+@media screen and (max-width: 770px) {
+  #navbar-logout {
+    display: none;
+  }
+  .nav-padder{
+    width: 0.1rem;
+  }
+}
