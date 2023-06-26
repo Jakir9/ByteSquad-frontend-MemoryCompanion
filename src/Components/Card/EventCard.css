@@ -1,0 +1,23 @@
+.event-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 0.75rem;
+    color: var(--whitebackground-text-colour);
+}
+
+.event-card {
+    background-color: #FAF8F6;
+}
+
+.event-table {
+    background-color: var(--main-background-color);
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+
+table td {
+  border: 2px solid var(--whitebackground-text-colour);
+  padding: 10px;
+}
