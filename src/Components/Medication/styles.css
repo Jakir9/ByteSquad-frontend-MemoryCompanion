@@ -112,10 +112,10 @@ table td:last-child {
   font-size: 20px;
   border-radius: 30px;
   border: none;
+  cursor: pointer;
 }
 
-.upload-button:hover,
-.refresh-button:hover {
+.add-med-button:hover {
   transform: translateY(-10px);
   box-shadow: 2px 2px 10px #656059;
 }
