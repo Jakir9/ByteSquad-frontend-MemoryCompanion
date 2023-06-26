@@ -1,40 +1,63 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  align-self: center;
 }
 
 .logo-login {
-    width: auto;
-    height: 8.5rem;
-    margin: 0.8rem;
+  width: auto;
+  height: 15rem;
+  margin: 0.2rem;
 }
 
 .login-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  margin-top: 1rem;
 }
 
-
 .login-buttons button {
-    background-color: var(--secondary-accent-colour);
-    color: var(--darkbackground-text-colour);
-    width: 8rem;
-    height: 2rem;
-    left: 62px;
-    top: 304px;
-    margin: 10px;
-    font-size: 20px;
-    border-radius: 0.8rem;
-    border: none;
+  background-color: var(--secondary-accent-colour);
+  color: var(--darkbackground-text-colour);
+  width: 15rem;
+  height: 5rem;
+  left: 62px;
+  top: 304px;
+  margin: 10px;
+  font-size: 20px;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+}
+
+.login-buttons button:hover {
+  filter: brightness(110%);
 }
 
 .login-text {
-    font-size: 0.7rem;
-    margin: 0.8rem;
-    color: var(--whitebackground-text-colour);
+  font-size: 1rem;
+  margin: 0.8rem;
+  color: var(--whitebackground-text-colour);
+}
+
+@media only screen and (max-width: 560px) {
+  .container {
+    width: 100%;
+  }
+
+  .login-text {
+    font-size: 0.8rem;
+  }
+
+  .login-buttons button{
+    width: 14rem;
+    height: 4rem;
+    font-size: 1rem;
+  }
 }

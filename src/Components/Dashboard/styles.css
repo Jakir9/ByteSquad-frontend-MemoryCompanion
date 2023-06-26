@@ -15,6 +15,10 @@
   /* background-color: var(--main-background-color); */
 }
 
+.profile-pic-section{
+  padding-top: 2rem;
+}
+
 .profile-pic {
   width: 200px;
   height: 200px;
@@ -54,4 +58,5 @@
 .button-container button:hover {
   transform: translateY(-10px);
   box-shadow: 2px 2px 10px #656059;
+  filter: brightness(110%);
 }

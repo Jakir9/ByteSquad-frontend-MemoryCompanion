@@ -14,9 +14,13 @@ header {
   font-size: 65px;
   color: #faf8f6;
   display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
   justify-content: space-between;
   align-items: center;
-
+  padding: 0.2rem;
+  width: 100%;
 }
 
 .logo {
@@ -29,7 +33,8 @@ header {
   background-color: #79aabd;
   display: flex;
   justify-content: center;
-  margin-left: 0.5rem;
+  padding-left: 5rem;
+  white-space: nowrap;
 }
 
 .title h1 {
@@ -39,12 +44,6 @@ header {
   margin: 0.3rem;
 }
 
-.logout-button {
-  background-color: #79aabd;
-  border: none;
-  color: #faf8f6;
-}
-
 .sidenav {
   height: 100%;
   width: 0;
@@ -52,10 +51,12 @@ header {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: var(--main-accent-colour);
+  background-color: var(--secondary-accent-colour);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  white-space: nowrap;
+  text-align: start;
 }
 
 .sidenav a {
@@ -64,6 +65,14 @@ header {
   font-size: 25px;
   color: var(--darkbackground-text-colour);
   display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  filter: brightness(200%);
+}
+
+.sidenav button {
   transition: 0.3s;
 }
 
@@ -82,7 +91,6 @@ header {
 span {
   font-size: 80px;
   cursor: pointer;
-  margin-left: 0.6rem;
 }
 
 .logout-button {
@@ -90,9 +98,16 @@ span {
   margin-right: 0.6rem;
 }
 
+@media (max-width: 385px) {
+  .title h1 {
+    font-size: 1.6rem;
+    /* Adjust font size for smaller screens */
+  }
+}
+
 @media only screen and (max-width: 767px) {
   span {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     /* Set a smaller size for mobile devices */
   }
   .logout-button {
@@ -101,12 +116,16 @@ span {
   }
 }
 
-  .logout-button {
-    font-size: 0.9rem;
-    margin-right: 0.6rem;
+.logout-button {
+  font-size: 0.9rem;
+  margin-right: 0.6rem;
+}
+
+@media (max-width: 450px) {
+  .title {
+    padding-right: 0;
   }
-
-
+}
 
 @media screen and (max-height: 450px) {
   .sidenav {
@@ -116,20 +135,23 @@ span {
   .sidenav a {
     font-size: 18px;
   }
+
+  .title {
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 768px) {
-  header {
-    font-size: 20px;
-    /* Adjust font size for smaller screens */
-  }
-
   .logo {
     width: 2.5rem;
     height: 2.5rem;
     margin-top: 0.2rem;
-    margin-bottom: 0.2rem
+    margin-bottom: 0.2rem;
   }
-
 }
 
+@media screen and (max-width: 770px) {
+  .title {
+    padding-left: 0;
+  }
+}

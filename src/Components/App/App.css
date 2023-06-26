@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  min-width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   
 }
 
