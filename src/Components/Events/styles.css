@@ -5,3 +5,29 @@
     padding: 1rem;
   }
   
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh; 
+  width: 100%;
+}
+
+  .add-event-button {
+    background-color: var(--secondary-accent-colour);
+    color: var(--darkbackground-text-colour);
+    
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+   
+   
+  }
+
+  .add-event-button:hover {
+    transform: translateY(-10px);
+    box-shadow: 2px 2px 10px #656059;
+  }
+  

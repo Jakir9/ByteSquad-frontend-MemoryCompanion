@@ -7,12 +7,12 @@ function EventCard({ id, eventName, dateOfEvent, eventTime, handleDelete }) {
   return (
     <>
       <div className="event-container">
-        <div className="event-card">
+        
         <table className='event-table'>
-          <td>{dateOfEvent}</td>
-          <td>{eventTime}</td>
-          <td>{eventName} </td>
-          <td>
+          <td className="first-cell">{dateOfEvent}</td>
+          <td className="second-cell">{eventTime}</td>
+          <td className="third-cell">{eventName} </td>
+          <td className="fourth-cell">
             <button
           className="delete-button-event"
           onClick={() => handleDelete(id)}
@@ -23,7 +23,7 @@ function EventCard({ id, eventName, dateOfEvent, eventTime, handleDelete }) {
         </td>
         </table>
         </div>
-      </div>
+    
     </>
   )
 }

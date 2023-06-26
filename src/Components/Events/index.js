@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import EventCard from '../Card/EventCard';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router';
+import './styles.css';
 function Events() {
   // auth0 code
   const { isAuthenticated } = useAuth0();
@@ -83,9 +84,11 @@ function Events() {
               />
             ))}
             {/* This is what will show when we first load the page */}
+            <div className="button-container">
             <button className="add-event-button" onClick={handleClick}>
               Add Event
             </button>
+            </div>
           </>
         )}
         {addEvent && (
