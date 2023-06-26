@@ -70,7 +70,7 @@ function Events() {
   return (
     isAuthenticated && (
       <>
-        <h1>Events</h1>
+        <h1 className='event-header'>Events</h1>
         {!addEvent && (
           <>
             {eventsList.map((item) => (
@@ -84,7 +84,7 @@ function Events() {
               />
             ))}
             {/* This is what will show when we first load the page */}
-            <div className="button-container">
+            <div className="event-button-container">
             <button className="add-event-button" onClick={handleClick}>
               Add Event
             </button>
@@ -92,7 +92,7 @@ function Events() {
           </>
         )}
         {addEvent && (
-          <div className="event-form">
+          <div className="event-form-container">
             <form className="event-form" onSubmit={handleSubmit}>
               <label>
                 Name of event:

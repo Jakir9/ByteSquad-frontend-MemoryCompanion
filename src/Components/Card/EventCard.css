@@ -69,7 +69,9 @@ td {
 }
 
 .fourth-cell {
-  text-align: end;
+  text-align: right;
+  border-top-right-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
 }
 
 .delete-button-event {
@@ -77,4 +79,29 @@ td {
   color: #FAF8F6;
   border: none;
   border-radius: 1rem;
+}
+
+/* responsiveness - 420px for iPhone XR */
+@media (max-width : 420px) {
+  
+  .event-container {
+    width: 90%;
+}
+
+  .event-table {
+    width: 100%;
+  }
+
+   .first-cell {
+    border-right: 3px solid var(--whitebackground-text-colour);
+  }
+
+  .delete-button-event {
+    background-color: #ea5e5e ;
+    color: #FAF8F6;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+  ;
+  }
 }
