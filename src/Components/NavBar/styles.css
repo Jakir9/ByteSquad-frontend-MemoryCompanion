@@ -43,6 +43,7 @@ header {
   color: var(--darkbackground-text-colour);
   align-self: center;
   margin: 0.3rem;
+  font-size: 1.9rem;
 }
 
 .sidenav {
@@ -105,6 +106,16 @@ span {
     /* Adjust font size for smaller screens */
   /*}
 } */
+
+@media screen and (max-width: 460px) {
+  .title h1{
+    font-size: 1.3rem;
+
+  }
+  .title{
+    margin-left: 2rem;
+  }
+}
 
 @media only screen and (max-width: 767px) {
   span {
