@@ -74,6 +74,8 @@ table {
 table td {
   border: 2px solid var(--whitebackground-text-colour);
   padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 table tr:first-child td {
@@ -125,7 +127,6 @@ table td:last-child {
   box-shadow: 2px 2px 10px #656059;
   filter: brightness(110%);
 }
-
 
 th:nth-child(1),
 td:nth-child(1) {
