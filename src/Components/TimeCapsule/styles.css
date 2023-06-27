@@ -12,6 +12,7 @@
     border-radius: 30px;
     border: none;
     cursor: pointer;
+    
   }
 
   .upload-button:hover, .refresh-button:hover {
@@ -22,6 +23,7 @@
 
   .page-title {
     color: #656059;
-    font-size:60px;
-    padding: 50px;
+    font-size:2rem;
+    weight:bold;
+    padding: 2rem;
   }

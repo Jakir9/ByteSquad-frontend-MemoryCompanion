@@ -88,12 +88,12 @@ function FriendsAndFamily() {
   return (
     isAuthenticated && (
       <>
-        <h1 className='fnf-header'>Friends & Family</h1>
+        <h1 className='fnf-header'>FRIENDS & FAMILY</h1>
         {!addButton && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown, which is essentially the Card component mapped over the familyAndFriendsList array to provide a card for each person.
           <>
             <div id="fnf-box">
               {familyAndFriendsList.map((item) => (
-                <Card
+                <Card 
                   id={item.id}
                   name={item.name}
                   relationship={item.relationship}
