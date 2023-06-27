@@ -50,14 +50,18 @@
   margin-bottom: 2rem;
   
 }
-
+/* Need to further style this, it's too wide */
 .fnf-form {
   background-color: var(--main-accent-colour);
   display: flex;
   flex-direction: column;
-  margin: 1.5rem;
+  margin: 1rem auto; 
   border-radius: 1rem;
+  width: 27%;
+  justify-content: center;
+  align-items: center;
 }
+
 
 label {
   display: flex;
