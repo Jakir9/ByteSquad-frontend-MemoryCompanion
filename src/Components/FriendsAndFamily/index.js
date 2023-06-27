@@ -104,7 +104,7 @@ function FriendsAndFamily() {
               ))}
             </div>
             <div>
-              <button className="add-button" onClick={handleClick}>
+              <button className="fnf-add-button" onClick={handleClick}>
                 {' '}
                 Add{' '}
               </button>
@@ -165,7 +165,7 @@ function FriendsAndFamily() {
                 />
               </label>
               <br></br>
-              <button type="submit" className="save-button">
+              <button type="submit" className="fnf-save-button">
                 Save
               </button>
             </form>

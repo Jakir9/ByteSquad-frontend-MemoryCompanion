@@ -1,32 +1,44 @@
 .fnf-header {
   color: var(--whitebackground-text-colour);
-  font-size: 100px;
+  font-size: 2rem;
 }
 
-.add-button,
-.save-button {
-  /* display: flex; */
-  align-items: center;
-  justify-content: center;
-  padding: 10px 100px;
-  background-color: #ff9b2f;
-  color: #faf8f6;
-  border: none;
-  border-radius: 1rem;
-  cursor: pointer;
-  gap: 5px;
+.fnf-add-button {
+  background-color: var(--secondary-accent-colour);
+  color: var(--darkbackground-text-colour);
+  width: 175px;
+  height: 76px;
+  left: 62px;
+  top: 304px;
+  margin: 10px;
   font-size: 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
 }
 
 .save-button {
-  padding: 10px 20px;
-  margin: 10px 40px;
 }
 
-.add-button:hover,
-.save-button:hover {
+.fnf-save-button {
+  background-color: #ff9b2f;
+    color: #faf8f6;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    width: 90%;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    align-self: center;
+}
+
+.fnf-add-button:hover,
+.fnf-save-button:hover {
   transform: translateY(-10px);
   box-shadow: 2px 2px 10px #656059;
+  filter: brightness(110%);
 }
 
 /* This is the container for all of the family and friends cards */
@@ -66,4 +78,8 @@ input {
   padding: 0.5rem;
   font-size: 20px;
   color: var(--whitebackground-text-colour);
+}
+
+@media (max-width: 420px) {
+
 }
