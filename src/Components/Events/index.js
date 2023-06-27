@@ -70,7 +70,7 @@ function Events() {
   return (
     isAuthenticated && (
       <>
-        <h1 className='event-header'>Events</h1>
+        <h1 className='event-header'>EVENTS</h1>
         {!addEvent && (
           <>
             {eventsList.map((item) => (

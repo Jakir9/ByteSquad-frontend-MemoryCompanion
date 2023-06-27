@@ -38,4 +38,5 @@
 .submit-med-button:hover {
   transform: translateY(-10px);
   box-shadow: 2px 2px 10px #656059;
+  filter: brightness(110%);
 }
