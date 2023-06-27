@@ -5,6 +5,8 @@ import MedicationList from "./MedicationList";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router";
 
+const URL = "http://localhost:3002/api/medication/"
+
 function Medication() {
   // auth0 code
   const { isAuthenticated } = useAuth0();
@@ -19,37 +21,87 @@ function Medication() {
   // end auth0 code
 
   // hard coded some medication data to display on screen
-  const testInput = [
-    {
-      name: "Ibuprofen",
-      dosageAmount: 2,
-      dosageTime: "09:00",
-      checked: false,
-    },
-    {
-      name: "Paracetomol",
-      dosageAmount: 2,
-      dosageTime: "10:00",
-      checked: false,
-    },
-  ];
+  // const testInput = [
+  //   {
+  //     name: "Ibuprofen",
+  //     dosageAmount: 2,
+  //     dosageTime: "09:00",
+  //     checked: false,
+  //   },
+  //   {
+  //     name: "Paracetomol",
+  //     dosageAmount: 2,
+  //     dosageTime: "10:00",
+  //     checked: false,
+  //   },
+  // ];
 
-  const [medication, setMedication] = useState(testInput); // useState hook to set the medication array // array of objects
+  const [medication, setMedication] = useState([]); // useState hook to set the medication array // array of objects
   const [addMedicationClicked, setAddMedicationClicked] = useState(false);
 
+  // useEffect bellow is used to call the fetch medication list function when component is mounted
+  useEffect(() => {
+    fetchMedicationList();
+  }, []);
+
+  // || GET METHOD || //
+  // The fetchMedicationList async function is used to fetch the list of medication from the server.
+  // This can be called when the component is mounted, or when a new medication is added
+  async function fetchMedicationList() { // async function to fetch medication list from server
+    try {
+      const response = await fetch(URL); // fetch request to server
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+      const data = await response.json(); // convert response to json
+      console.log(`This is the data`, data);
+      setMedication(Array.isArray(data.payload) ? data.payload : []); // set medication array to data payload
+      console.log(`This is the data.payload`, data.payload);
+    } catch (error) {
+      console.error("error fetching medication list: ", error);
+      setMedication([]);
+    }
+
+  }
+// || POST METHOD || // 
   function addMedication(newMedication) {
     setMedication([...medication, newMedication]); // spread operator to add new medication to the array
     console.log(medication);
   }
   // create object using form data
-  const handleSubmit = (event) => {
+  async function handleSubmit (event) {
+
     event.preventDefault(); // Prevents the form from refreshing the page
     // newMedication is used to populate new object with form data
-    let newMedication = {
-      name: event.target.name.value,
-      dosageAmount: event.target.dosage.value,
-      dosageTime: event.target.time.value,
+    const newMedication = {
+      user_id: 1,
+      medication_name: event.target.name.value,
+      scheduled_dosage: event.target.dosage.value,
+      time_dosage: event.target.time.value,
     };
+try {
+  const response = await fetch(URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+},
+    body: JSON.stringify(newMedication),
+  });
+  if (response.ok) {
+ const data = await response.json();
+    console.log(`This is the data`, data);
+    setMedication([...medication, data]);
+    fetchMedicationList();
+    console.log(`This is the data.payload`, data.payload);
+  } else {
+    throw new Error ("failed to add medication")
+  }
+ 
+} catch (error) {
+  console.error("error fetching medication list: ", error);
+ 
+}
+
 
     console.log(newMedication);
     addMedication(newMedication);
@@ -76,9 +128,9 @@ function Medication() {
 
                 {medication.map((item) => (
                   <MedicationList
-                    name={item.name}
-                    dosageAmount={item.dosageAmount}
-                    dosageTime={item.dosageTime}
+                    name={item.medication_name}
+                    dosageAmount={item.scheduled_dosage}
+                    dosageTime={item.time_dosage}
                     checked={item.checked}
                   />
                 ))}
