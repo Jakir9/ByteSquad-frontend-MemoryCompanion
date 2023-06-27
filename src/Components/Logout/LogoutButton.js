@@ -33,7 +33,7 @@ const LogoutButton = ({id}) => {
 
   return (
     isAuthenticated && (
-      <div>
+      <div className='logout-button-container'>
         <button
           onClick={handleLogout}
           aria-label="Log out"
