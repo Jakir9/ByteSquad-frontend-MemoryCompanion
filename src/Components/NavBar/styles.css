@@ -98,9 +98,9 @@ span {
   margin-right: 0.6rem;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 420px) {
   .title h1 {
-    font-size: 1.6rem;
+    font-size: 1rem;
     /* Adjust font size for smaller screens */
   }
 }
@@ -124,6 +124,10 @@ span {
 @media (max-width: 450px) {
   .title {
     padding-right: 0;
+  }
+  header {
+    
+    width: 100%;
   }
 }
 
