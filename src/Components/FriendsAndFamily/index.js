@@ -177,6 +177,6 @@ function FriendsAndFamily() {
     </>
 
   )
-}
+  )}
 
 export default FriendsAndFamily
