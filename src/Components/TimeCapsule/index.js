@@ -72,7 +72,7 @@ function TimeCapsule() {
   return (
     isAuthenticated && (
       <div>
-        <h1 className="page-title">Time Capsule</h1>
+        <h1 className="page-title">TIME CAPSULE</h1>
         <div
           className="gallery-grid"
           ref={containerRef}

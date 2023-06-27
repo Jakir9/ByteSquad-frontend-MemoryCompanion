@@ -108,7 +108,7 @@ table td:last-child {
   height: 76px;
   left: 62px;
   top: 304px;
-  margin: 10px;
+  margin: 30px;
   font-size: 20px;
   border-radius: 30px;
   border: none;
@@ -118,4 +118,5 @@ table td:last-child {
 .add-med-button:hover {
   transform: translateY(-10px);
   box-shadow: 2px 2px 10px #656059;
+  filter: brightness(110%);
 }
