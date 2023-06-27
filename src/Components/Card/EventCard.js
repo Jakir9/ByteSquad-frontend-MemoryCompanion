@@ -18,8 +18,8 @@ function EventCard({ id, eventName, dateOfEvent, eventTime, handleDelete }) {
           onClick={() => handleDelete(id)}
         >
           {' '}
-          X{' '}
-          </button>
+          {' '}
+         X </button>
         </td>
         </table>
         </div>

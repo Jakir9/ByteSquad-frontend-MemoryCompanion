@@ -85,4 +85,13 @@
   .add-event-button {
     width: 60%;
   }
+  /* Form Responsiveness */
+
+  .event-form-container{
+    width: 100%;
+  }
+
+  .event-form {
+    width: 100%;
+  }
 }
