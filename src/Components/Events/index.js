@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import EventCard from "../Card/EventCard";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const URL = "http://localhost:3002/api/events/";
 
@@ -9,7 +10,10 @@ function Events() {
   const eventNameRef = useRef("");
   const dateOfEventRef = useRef("");
   const eventTimeRef = useRef("");
-
+  const { user } = useAuth0();
+  console.log(user);
+  const auth0_id = user?.sub;
+  console.log(`This is the auth ID`, auth0_id);
   // useEffect below is used to call the fetchEventsList function when the component is mounted
   useEffect(() => {
     fetchEventsList(); // Fetch events list on component mount
@@ -20,12 +24,14 @@ function Events() {
   // This can be called when the component is mounted, or when a new event is added
   async function fetchEventsList() {
     try {
-      const response = await fetch(URL);
+      const response = await fetch(`${URL}?auth0id=${auth0_id}`);
       if (!response.ok) {
         throw new Error(`Request failed with status ${response.status}`);
       }
       const data = await response.json();
+      console.log(`This is the data`, data);
       setEventsList(Array.isArray(data.payload) ? data.payload : []);
+      console.log(`This is the data.payload`, data.payload);
     } catch (error) {
       console.error("Error fetching data:", error);
       setEventsList([]);
@@ -42,7 +48,7 @@ function Events() {
     event.preventDefault();
 
     const newEvent = {
-      user_id: 1,
+      auth0_id: auth0_id,
       event_name: eventNameRef.current.value,
       event_date: dateOfEventRef.current.value,
       event_time: eventTimeRef.current.value,
