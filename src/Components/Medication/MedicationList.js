@@ -1,21 +1,27 @@
 import React, { Component, useState } from 'react'
 import './styles.css'
 
-function MedicationList({ name, dosageAmount, schedule, dosageTime, checked }) {
-  return (
-    <div>
-      <ul className="medList">
-        <li>{name} </li>
-        <li>{dosageAmount} </li>
-        <li>{schedule} </li>
-        <li>{dosageTime} </li>
-        {/* <li>{dosageTime[1]} </li>
-        <li>{dosageTime[2]} </li> */}
+function MedicationList({ name, dosageAmount, schedule, dosageTime, checked })
+{
+  
+  // let numberOfTimes = dosageTime.length;
+  // let dosageTimeList = [];
 
+  // for (let i = 0; i < numberOfTimes; i++){
+  //   dosageTimeList.push(<>{dosageTime[i]}<br/></>)
+  // }
+
+  console.log(dosageTime)
+  return (
+    <tr>
+      <td>{name}</td>
+      <td>{dosageAmount}</td>
+      <td>{dosageTime}</td>
+      <td>
         <input type="checkbox" setChecked={checked} onChange={() => !checked} />
-      </ul>
-    </div>
-  )
+      </td>
+    </tr>
+  );
 }
 
 export default MedicationList

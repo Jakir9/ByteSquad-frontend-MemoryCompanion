@@ -1,0 +1,107 @@
+.event-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 0.75rem;
+    color: var(--whitebackground-text-colour);
+}
+
+/* .event-card {
+    background-color: #FAF8F6;
+    width: 30%;
+   
+} */
+
+.event-table {
+    background-color: var(--main-background-color);
+    width: 60%;
+    border-radius: 0.4rem;
+    table-layout: fixed;
+    
+  }
+
+/* table td {
+  border: 0px solid var(--whitebackground-text-colour);
+  padding: 10px;
+
+} */
+
+table {
+  width:100%;
+  table-layout:fixed;
+  max-height:100%;
+}
+
+td {
+  border: 0px solid var(--whitebackground-text-colour);
+  padding: 10px;
+  height: 25px;
+}
+
+/* table:first-child td {
+  border-right: 2px;
+} */
+
+.first-cell {
+  border-right: 2px solid var(--whitebackground-text-colour);
+  padding: 10px;
+  border-top: 0px;
+  border-bottom: 0px;
+  
+}
+
+.second-cell, .third-cell, .fourth-cell {
+  background-color: #79AABD;
+  color: #FAF8F6;
+  border: none;
+  text-align: start;
+  
+  
+}
+
+.third-cell {
+  padding:0.5rem 1rem 0.5rem 0.5rem;
+  text-align: start;
+  width: 40%;
+ 
+
+}
+
+.fourth-cell {
+  text-align: right;
+  border-top-right-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+}
+
+.delete-button-event {
+  background-color: #ea5e5e ;
+  color: #FAF8F6;
+  border: none;
+  border-radius: 1rem;
+}
+
+/* responsiveness - 420px for iPhone XR */
+@media (max-width : 420px) {
+  
+  .event-container {
+    width: 90%;
+}
+
+  .event-table {
+    width: 100%;
+  }
+
+   .first-cell {
+    border-right: 3px solid var(--whitebackground-text-colour);
+  }
+
+  .delete-button-event {
+    background-color: #ea5e5e ;
+    color: #FAF8F6;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+  ;
+  }
+}

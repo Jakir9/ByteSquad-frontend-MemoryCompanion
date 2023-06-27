@@ -3,8 +3,22 @@ import { useState, useEffect } from 'react'
 import Card from '../Card/Card'
 import FileUpload from '../Upload/upload'
 import './styles.css'
+import { useAuth0 } from '@auth0/auth0-react'
+import { useNavigate } from 'react-router'
 
 function FriendsAndFamily() {
+  // auth0 code
+  const { isAuthenticated } = useAuth0()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      // User is logged in, redirect to dashboard
+      navigate('/login')
+    }
+  }, [isAuthenticated, navigate])
+  // end auth0 code
+
   // The first useState is used for the array of friends and family.
   const [familyAndFriendsList, setFamilyAndFriendsList] = useState([])
   // This block of useState is used for populate the form when a new family member is added.
@@ -72,29 +86,33 @@ function FriendsAndFamily() {
   }
 
   return (
-    <>
-      <h1>Friends & Family</h1>
-      {!addButton && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown, which is essentially the Card component mapped over the familyAndFriendsList array to provide a card for each person.
-        <>
-          {familyAndFriendsList.map((item) => (
-            <Card
-              id={item.id}
-              name={item.name}
-              relationship={item.relationship}
-              image={item.image}
-              age={item.age}
-              DOB={item.dateOfBirth}
-              handleDelete={handleDelete}
-            />
-          ))}
-          <div>
-            <button className="add-button" onClick={handleClick}>
-              {' '}
-              Add{' '}
-            </button>
-          </div>
-        </>
-      )}
+    isAuthenticated && (
+      <>
+        <h1 className='fnf-header'>Friends & Family</h1>
+        {!addButton && ( // When addButton is not clicked, it is false, therefore the list of friends and family will be shown, which is essentially the Card component mapped over the familyAndFriendsList array to provide a card for each person.
+          <>
+            <div id="fnf-box">
+              {familyAndFriendsList.map((item) => (
+                <Card
+                  id={item.id}
+                  name={item.name}
+                  relationship={item.relationship}
+                  image={item.image}
+                  age={item.age}
+                  DOB={item.dateOfBirth}
+                  handleDelete={handleDelete}
+                />
+              ))}
+            </div>
+            <div>
+              <button className="add-button" onClick={handleClick}>
+                {' '}
+                Add{' '}
+              </button>
+            </div>
+          </>
+        )}
+
 
       {addButton && ( // When addButton is clicked, it is true, therefore the form will be shown
         <div className="fnf-form">
@@ -157,6 +175,7 @@ function FriendsAndFamily() {
         </div>
       )}
     </>
+
   )
 }
 
