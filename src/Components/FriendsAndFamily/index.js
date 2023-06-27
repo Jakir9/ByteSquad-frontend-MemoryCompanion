@@ -92,7 +92,7 @@ function FriendsAndFamily() {
           <>
             <div id="fnf-box">
               {familyAndFriendsList.map((item) => (
-                <Card
+                <Card 
                   id={item.id}
                   name={item.name}
                   relationship={item.relationship}
