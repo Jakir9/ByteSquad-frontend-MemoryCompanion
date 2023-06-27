@@ -6,8 +6,8 @@
 .fnf-add-button {
   background-color: var(--secondary-accent-colour);
   color: var(--darkbackground-text-colour);
-  width: 175px;
-  height: 76px;
+  width: 25rem;
+  height: 8rem;
   left: 62px;
   top: 304px;
   margin: 10px;
