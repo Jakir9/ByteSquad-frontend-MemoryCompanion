@@ -7,6 +7,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router";
 import axios from "axios";
 
+const url = "http://localhost:3002/api/friendsandfamily/";
+
 function FriendsAndFamily() {
   // auth0 code
   const { isAuthenticated } = useAuth0();
@@ -54,7 +56,7 @@ function FriendsAndFamily() {
 
   // This function handles the submit button. It creates a new person object with the data from the form, and then adds it to the familyAndFriendsList array. The text capture logic is found within the form itself (event.target.value). This function then sets the state and assigns this to a new person. We can immutably add this new person to the array of family/friends. We then clear the form fields.
   // Image is hardcoded for now, but will be replaced with a file upload feature.
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     // Declare new person object and assign values from form
     const newPerson = {
@@ -65,9 +67,33 @@ function FriendsAndFamily() {
       fnf_age: age,
       fnf_photo: photoURL,
     };
-    // Immutably update the familyAndFriendsList array
-    setFamilyAndFriendsList([...familyAndFriendsList, newPerson]);
 
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+    }, 
+        body: JSON.stringify(newPerson),
+  });
+
+      if (response.ok) {
+        // New person was added successfully
+        console.log("New person added successfully")
+        console.log(photoURL);
+
+       const data = await response.json(); 
+    // Immutably update the familyAndFriendsList array
+    setFamilyAndFriendsList([...familyAndFriendsList, data]);
+
+      }else {
+        // Handle error
+        throw new Error("Failed to add family and friends member");
+      }
+    } catch (error) {
+      // Handle error
+      console.error("Error adding family and friends member:", error);
+    }
     // Clear form fields
     setName("");
     setRelationship("");
@@ -92,7 +118,8 @@ function FriendsAndFamily() {
     // console.log(selectedFile); //Selected file is an object with success and payload as keys
   };
 
-  const handleFileUpload = () => {
+  // Async allowed the string to be updated in the database - it was acting too fast before, only posting an empty string
+  const handleFileUpload = async() => {
     const formData = new FormData();
     formData.append("file", selectedFile);
     // Local Host Port needs to be the backend server port
@@ -108,6 +135,8 @@ function FriendsAndFamily() {
         console.error(error);
       });
   };
+
+  
 
   return (
     isAuthenticated && (
