@@ -3,6 +3,8 @@
     font-weight: bold;
     color: var(--whitebackground-text-colour);
     padding: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   /* Have removed this block of code as it is not needed for the time being. */
 /* .event-button-container {
@@ -40,19 +42,20 @@
     display: flex;
     justify-content: center;
     align-self: center;
-    height: 40vh; 
-    width: 60%;
-    padding-top: 4rem;
+    width: 50%;
   }
 
   .event-form {
     background-color: var(--main-accent-colour);
     display: flex;
     flex-direction: column;
-    margin: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem auto;
     border-radius: 1rem;
-    width: 60%;
+    width: 32rem;
     align-self: center;
+    padding-top: 1rem;
   }
 
 .save-button {
