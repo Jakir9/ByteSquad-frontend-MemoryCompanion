@@ -18,7 +18,7 @@ function MedicationList({ name, dosageAmount, schedule, dosageTime, checked })
       <td>{dosageAmount}</td>
       <td>{dosageTime}</td>
       <td>
-        <input type="checkbox" setChecked={checked} onChange={() => !checked} />
+        <input className='medication-checkbox' type="checkbox" setChecked={checked} onChange={() => !checked} />
       </td>
     </tr>
   );

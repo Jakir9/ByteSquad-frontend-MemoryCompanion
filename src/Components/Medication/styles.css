@@ -6,7 +6,7 @@ main {
 
 .medication-container {
   background-color: var(--main-accent-colour);
-  width: 60%;
+  width: 50%;
   /* padding: 0.8rem; */
   border-radius: 0.75rem;
   color: var(--whitebackground-text-colour);
@@ -15,6 +15,7 @@ main {
   align-items: center;
   flex-direction: column;
   padding-bottom: 1rem;
+  font-size: 2rem;
 }
 
 .medication-header {
@@ -65,6 +66,15 @@ table td:last-child {
   border-right: none;
 }
 
+.medication-checkbox {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2px solid var(--whitebackground-text-colour);
+  cursor: pointer;
+}
+
 .time-column {
   display: flex;
   flex-direction: column;
@@ -83,8 +93,8 @@ table td:last-child {
 .add-med-button {
   background-color: var(--secondary-accent-colour);
   color: var(--darkbackground-text-colour);
-  width: 175px;
-  height: 76px;
+  width: 12rem;
+  height: 5rem;
   left: 62px;
   top: 304px;
   margin: 30px;
@@ -118,4 +128,37 @@ td:nth-child(3) {
 th:nth-child(4),
 td:nth-child(4) {
   width: 20%;
+}
+
+@media (max-width: 1600px) {
+  .medication-container {
+    font-size: 100%;
+    width: 70%;
+  }
+}
+
+@media (max-width: 700px) {
+  .medication-container {
+    width: 90%;
+  }
+  .add-med-button {
+    width: 90%;
+  }
+}
+
+@media (max-width: 420px){
+  .medication-header {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .medication-container {
+    font-size: 90%;
+  }
+  .medication-checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
