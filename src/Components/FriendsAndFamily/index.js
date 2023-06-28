@@ -105,14 +105,13 @@ function FriendsAndFamily() {
               ))}
             </div>
             <div>
-              <button className="add-button" onClick={handleClick}>
+              <button className="fnf-add-button" onClick={handleClick}>
                 {' '}
                 Add{' '}
               </button>
             </div>
           </>
         )}
-
 
       {addButton && ( // When addButton is clicked, it is true, therefore the form will be shown
         <div className="fnf-form">
@@ -175,7 +174,6 @@ function FriendsAndFamily() {
         </div>
       )}
     </>
-
   )
   )}
 
