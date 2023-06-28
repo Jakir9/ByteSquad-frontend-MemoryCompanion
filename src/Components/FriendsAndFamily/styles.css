@@ -14,13 +14,13 @@
   font-size: 20px;
   border-radius: 30px;
   border: none;
-  font-weight:bold;
+  font-weight: bold;
   padding: 2rem;
 }
 
 .fnf-card {
   object-fit: fill;
-} 
+}
 
 .add-button,
 .save-button {
@@ -32,7 +32,7 @@
   color: #faf8f6;
   border: none;
   border-radius: 30px;
-  margin:30px;
+  margin: 30px;
   cursor: pointer;
 }
 
@@ -43,16 +43,16 @@
 
 .fnf-save-button {
   background-color: #ff9b2f;
-    color: #faf8f6;
-    border: none;
-    border-radius: 1rem;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 20px;
-    width: 90%;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    align-self: center;
+  color: #faf8f6;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  width: 90%;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  align-self: center;
 }
 
 .fnf-add-button:hover,
@@ -72,20 +72,17 @@
   justify-content: center;
   align-items: flex-start;
   margin-bottom: 2rem;
-  
 }
 /* Need to further style this, it's too wide */
 .fnf-form {
   background-color: var(--main-accent-colour);
   display: flex;
   flex-direction: column;
-  margin: 1rem auto; 
+  margin: 1rem auto;
   border-radius: 1rem;
-  width: 27%;
   justify-content: center;
   align-items: center;
 }
-
 
 label {
   display: flex;
@@ -94,6 +91,7 @@ label {
   margin: 0.5rem;
   color: var(--darkbackground-text-colour);
   font-size: 20px;
+  width: 90%;
 }
 
 input {
@@ -104,8 +102,11 @@ input {
   padding: 0.5rem;
   font-size: 20px;
   color: var(--whitebackground-text-colour);
+  width: 90%;
 }
 
-@media (max-width: 420px) {
-
+@media (max-width: 575px) {
+  .fnf-form {
+    width: 90%;
+  }
 }

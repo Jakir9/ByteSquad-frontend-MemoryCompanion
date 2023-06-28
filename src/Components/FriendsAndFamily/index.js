@@ -166,7 +166,7 @@ function FriendsAndFamily() {
               />
             </label>
             <br></br>
-            <button type="submit" className="save-button">
+            <button type="submit" className="fnf-save-button">
               Save
             </button>
             <FileUpload />
