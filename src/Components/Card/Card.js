@@ -14,20 +14,20 @@ function Card({ id, name, relationship, image, DOB, age, handleDelete }) {
         <figure className="figure" style={{ width: 300 }}>
           {" "}
           <img
-            style={{ height: 300, width: 300 }}
+            style={{ height: 300, width: 200 }}
             src={image}
             alt={name}
           />{" "}
         </figure>
         <figcaption className="figure-caption">
           {" "}
-          Name:{name}
+          Name: {name}
           <br></br>
-          Relationship:{relationship}
+          Relationship: {relationship}
           <br></br>
-          Age: {age} years old
+          Age:  {age}  years old
           <br></br>
-          Birthday: {DOB}
+          Birthday:  {DOB}
         </figcaption>
       </div>
     </>

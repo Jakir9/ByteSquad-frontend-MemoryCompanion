@@ -2,16 +2,17 @@
     font-size: 2rem;
     font-weight: bold;
     color: var(--whitebackground-text-colour);
-    padding: 1rem;
+    padding: 2rem;
   }
-  
-.event-button-container {
+  /* Have removed this block of code as it is not needed for the time being. */
+/* .event-button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20vh; 
+  height: 40vh; 
   width: 100%;
-}
+  padding-top: 4rem;
+} */
 
   .add-event-button {
     background-color: var(--secondary-accent-colour);
@@ -20,7 +21,7 @@
     height: 76px;
     left: 62px;
     top: 304px;
-    margin: 10px;
+    margin: 30px;
     font-size: 20px;
     border-radius: 30px;
     border: none;
@@ -30,7 +31,7 @@
   .add-event-button:hover {
     transform: translateY(-10px);
     box-shadow: 2px 2px 10px #656059;
-    
+    filter: brightness(110%);
   }
   
   /* Form */
@@ -41,6 +42,7 @@
     align-self: center;
     height: 40vh; 
     width: 60%;
+    padding-top: 4rem;
   }
 
   .event-form {

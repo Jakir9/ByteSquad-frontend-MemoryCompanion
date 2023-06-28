@@ -19,8 +19,8 @@ header {
   flex-basis: 0;
   justify-content: space-between;
   align-items: center;
-  padding: 0.2rem;
-  width: 100%;
+  padding: 0.2rem 0 0.2rem 0rem;
+  /* width: 100%; */
 }
 
 .logo {
@@ -35,6 +35,7 @@ header {
   justify-content: center;
   padding-left: 5rem;
   white-space: nowrap;
+  font-size: 0.5rem;
 }
 
 .title h1 {
@@ -42,6 +43,7 @@ header {
   color: var(--darkbackground-text-colour);
   align-self: center;
   margin: 0.3rem;
+  font-size: 1.9rem;
 }
 
 .sidenav {
@@ -98,10 +100,20 @@ span {
   margin-right: 0.6rem;
 }
 
-@media (max-width: 420px) {
+/* @media (max-width: 420px) {
   .title h1 {
     font-size: 1rem;
     /* Adjust font size for smaller screens */
+  /*}
+} */
+
+@media screen and (max-width: 460px) {
+  .title h1{
+    font-size: 1.3rem;
+
+  }
+  .title{
+    margin-left: 2rem;
   }
 }
 
