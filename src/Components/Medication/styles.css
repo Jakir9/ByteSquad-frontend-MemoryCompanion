@@ -1,36 +1,7 @@
-/* .medList{
-list-style-type: none;
-display: flex;
-justify-content: space-between;
-
-} 
-/* ul {  
-list-style-type: none;  
-display: flex;
-justify-content: space-between;
-
-}   */
-
-/* li {
-    list-style-type: none;
-        display: flex;
-        justify-content: space-between;
-
-}  */
-
-/* --main-background-color: #FAF8F6;
-  --main-accent-colour: #79AABD;
-  --secondary-accent-colour: #FF9B2F;
-  --whitebackground-text-colour: #656059;
-  --darkbackground-text-colour: #FAF8F6;
-  --other-colour: #EAECDE;
-  --other-colour2: #C2C2C2; */
-
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
 }
 
 .medication-container {
@@ -51,6 +22,8 @@ main {
   font-weight: bold;
   color: var(--whitebackground-text-colour);
   padding: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .dosage-title {

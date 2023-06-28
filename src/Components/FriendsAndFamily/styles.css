@@ -1,6 +1,7 @@
 .fnf-header {
   color: var(--whitebackground-text-colour);
   font-size: 2rem;
+    padding: 2rem;
 }
 
 .fnf-add-button {
@@ -78,6 +79,7 @@
   background-color: var(--main-accent-colour);
   display: flex;
   flex-direction: column;
+  /* This affects the width of the container!! */
   margin: 1rem auto;
   border-radius: 1rem;
   justify-content: center;
