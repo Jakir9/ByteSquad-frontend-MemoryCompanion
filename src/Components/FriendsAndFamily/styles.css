@@ -112,7 +112,7 @@ input {
 }
 
 
-@media (max-width: 575px) {
+@media (max-width: 420px) {
   .fnf-form {
     width: 90%;
   }
