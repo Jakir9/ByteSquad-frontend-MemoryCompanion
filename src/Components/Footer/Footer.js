@@ -6,8 +6,8 @@ const Footer = () => {
     <div>
       <footer className="footer">
         <div className="footer-inner">
-          <h1>I am so over this</h1>
-          <p>Steve, we're not friends anymore :(</p>
+          <h1>ByteSquad ©</h1>
+          
         </div>
       </footer>
     </div>

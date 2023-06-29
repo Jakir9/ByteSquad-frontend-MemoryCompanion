@@ -1,7 +1,7 @@
 .App {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 93vh;
   }
   
   .content-wrapper {
@@ -19,7 +19,7 @@
     background-color: #C2C2C2;
     color: #FAF8F6;
     width: 100%;
-    padding: 0px;
+    padding: 1px;
     transition: transform 0.3s;
     transform: translateY(100%);
   }
