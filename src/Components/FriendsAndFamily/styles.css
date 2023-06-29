@@ -17,6 +17,7 @@
   border: none;
   font-weight: bold;
   padding: 2rem;
+  cursor: pointer;
 }
 
 .fnf-card {
@@ -80,7 +81,9 @@
   background-color: var(--main-accent-colour);
   display: flex;
   flex-direction: column;
+
   /* This affects the width of the container!! */
+
   margin: 1rem auto;
   border-radius: 1rem;
   justify-content: center;
@@ -108,6 +111,7 @@ input {
   width: 90%;
 }
 
+
 @media (max-width: 575px) {
   .fnf-form {
     width: 90%;
@@ -116,4 +120,5 @@ input {
   .fnf-add-button, .fnf-save-button {
     width: 90%;
   }
+  
 }

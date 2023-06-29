@@ -1,42 +1,42 @@
 [
     {
-        "id": 0,
-        "name": "Susan",
-        "relationship": "Wife",
-        "image": "https://www.americanbrainfoundation.org/wp-content/uploads/2019/08/Board-2020-SSWILLIAMS-460x460-1.jpg",
-        "age": 67,
-        "dateOfBirth": "1st January"
+        "fnf_id": 0,
+        "fnf_name": "Susan",
+        "fnf_relationship": "Wife",
+        "fnf_photo": "https://www.americanbrainfoundation.org/wp-content/uploads/2019/08/Board-2020-SSWILLIAMS-460x460-1.jpg",
+        "fnf_age": 67,
+        "fnf_dob": "1st January"
     },
     {
-        "id": 1,
-        "name": "Zelda",
-        "relationship": "Daughter",
-        "image": "https://m.media-amazon.com/images/M/MV5BMTI4NzM5MTYxN15BMl5BanBnXkFtZTcwMzIxOTAyMw@@._V1_FMjpg_UX1000_.jpg",
-        "age": 33,
-        "dateOfBirth": "31st July"
+        "fnf_id": 1,
+        "fnf_name": "Zelda",
+        "fnf_relationship": "Daughter",
+        "fnf_photo": "https://m.media-amazon.com/images/M/MV5BMTI4NzM5MTYxN15BMl5BanBnXkFtZTcwMzIxOTAyMw@@._V1_FMjpg_UX1000_.jpg",
+        "fnf_age": 33,
+        "fnf_dob": "31st July"
     },
     {
-        "id": 2,
-        "name": "Cody",
+        "fnf_id": 2,
+        "fnf_name": "Cody",
+        "fnf_relationship": "Son",
+        "fnf_photo": "https://www.mrdustbin.com/us/wp-content/uploads/2022/08/cody-williams.jpg",
+        "fnf_age": 31,
+        "fnf_dob": "25th November"
+    },
+    {
+        "fnf_id": 3,
+        "fnf_name": "Zak",
         "relationship": "Son",
-        "image": "https://www.mrdustbin.com/us/wp-content/uploads/2022/08/cody-williams.jpg",
-        "age": 31,
-        "dateOfBirth": "25th November"
+        "fnf_photo": "https://nypost.com/wp-content/uploads/sites/2/2021/07/zak-williams-001.jpg?quality=90&strip=all&w=731",
+        "fnf_age": 40,
+        "fnf_dob": "11th April"
     },
     {
-        "id": 3,
-        "name": "Zak",
-        "relationship": "Son",
-        "image": "https://nypost.com/wp-content/uploads/sites/2/2021/07/zak-williams-001.jpg?quality=90&strip=all&w=731",
-        "age": 40,
-        "dateOfBirth": "11th April"
-    },
-    {
-        "id": 4,
-        "name": "McLaurin",
-        "relationship": "Grandchild",
-        "image": "https://bestlifeonline.com/wp-content/uploads/sites/3/2021/06/Zak-williams.png",
-        "age": 4,
-        "dateOfBirth": "22nd May"
+        "fnf_id": 4,
+        "fnf_name": "McLaurin",
+        "fnf_relationship": "Grandchild",
+        "fnf_photo": "https://bestlifeonline.com/wp-content/uploads/sites/3/2021/06/Zak-williams.png",
+        "fnf_age": 4,
+        "fnf_dob": "22nd May"
     }
 ]
