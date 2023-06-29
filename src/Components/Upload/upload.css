@@ -1,0 +1,22 @@
+.fnf-upload-button {
+  background-color: #ff9b2f;
+  color: #faf8f6;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  width: 30%;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  align-self: center;
+}
+
+.fnf-upload-input {
+  width: 290px;
+}
+.fnf-upload-button:hover {
+  transform: translateY(-10px);
+  box-shadow: 2px 2px 10px #656059;
+  filter: brightness(110%);
+}

@@ -1,5 +1,6 @@
 // import React, { useState } from "react";
 // import axios from "axios";
+import "./upload.css"
 
 function FileUpload({
   handleFileChange,
@@ -37,8 +38,8 @@ function FileUpload({
 
   return (
     <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload</button>
+      <input className="fnf-upload-input" type="file" onChange={handleFileChange} />
+      <button className="fnf-upload-button" onClick={handleUpload}>Upload</button>
     </div>
   );
 }

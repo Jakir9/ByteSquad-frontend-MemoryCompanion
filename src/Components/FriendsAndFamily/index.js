@@ -36,19 +36,24 @@ function FriendsAndFamily() {
   // It fetches the data and sets the state of familyAndFriendsList to the data. This is then mapped over in the return statement to display the data.
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch("friendsAndFamilyDB.json");
-        const data = await response.json();
-        setFamilyAndFriendsList(data);
-      } catch (error) {
-        console.error("Error fetching JSON:", error);
-        setFamilyAndFriendsList([]);
-      }
-    }
-    fetchData();
+    fetchFamilyAndFriendsList();
   }, []);
 
+  async function fetchFamilyAndFriendsList() {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+      const data = await response.json();
+      console.log(`This is the data`, data);
+      setFamilyAndFriendsList(Array.isArray(data.payload) ? data.payload : []);
+      console.log(`This is the data.payload`, data.payload);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setFamilyAndFriendsList([]);
+    }
+  }
   // This function handles the 'add' click. It essentially set the state to true, which then renders the form (conditional rendering of the form)
   function handleClick() {
     setAddButton(true);
@@ -73,20 +78,20 @@ function FriendsAndFamily() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-    }, 
+        },
         body: JSON.stringify(newPerson),
-  });
+      });
 
       if (response.ok) {
         // New person was added successfully
-        console.log("New person added successfully")
+        console.log("New person added successfully");
         console.log(photoURL);
 
-       const data = await response.json(); 
-    // Immutably update the familyAndFriendsList array
-    setFamilyAndFriendsList([...familyAndFriendsList, data]);
-
-      }else {
+        const data = await response.json();
+        // Immutably update the familyAndFriendsList array
+        setFamilyAndFriendsList([...familyAndFriendsList, data]);
+        fetchFamilyAndFriendsList();
+      } else {
         // Handle error
         throw new Error("Failed to add family and friends member");
       }
@@ -103,14 +108,35 @@ function FriendsAndFamily() {
     setPhotoURL("");
   }
 
-  // Function to handle when the delete button is clicked on a family/friends card. It takes in the id of the person, and then filters the array to remove the person with the matching id. This is then set as the new state. This is handed down to the Card component as props.
-  function handleDelete(id) {
+  // // Function to handle when the delete button is clicked on a family/friends card. It takes in the id of the person, and then filters the array to remove the person with the matching id. This is then set as the new state. This is handed down to the Card component as props.
+  // function handleDelete(fnf_id) {
+  //   // Go through the array and find the person with the matching id
+  //   // Immutably update the array without the person with the matching id
+  //   setFamilyAndFriendsList(
+  //     familyAndFriendsList.filter((item) => item.fnf_id !== fnf_id)
+  //   );
+  //   console.log(familyAndFriendsList);
+  // }
+
+  // || DELETE METHOD || //
+  // Function to handle when the delete button is clicked
+  async function handleDelete(fnf_id) {
     // Go through the array and find the person with the matching id
     // Immutably update the array without the person with the matching id
-    setFamilyAndFriendsList(
-      familyAndFriendsList.filter((item) => item.id !== id)
-    );
-    console.log(familyAndFriendsList);
+    try {
+      const response = await fetch(`${url}/${fnf_id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      });
+      if (response.ok) {
+        fetchFamilyAndFriendsList();
+        console.log("Event deleted successfully!");
+      } else {
+        console.log("Failed to delete event");
+      }
+    } catch (error) {
+      console.error("Error deleting event:", error);
+    }
   }
 
   const handleFileChange = (event) => {
@@ -119,7 +145,7 @@ function FriendsAndFamily() {
   };
 
   // Async allowed the string to be updated in the database - it was acting too fast before, only posting an empty string
-  const handleFileUpload = async() => {
+  const handleFileUpload = async () => {
     const formData = new FormData();
     formData.append("file", selectedFile);
     // Local Host Port needs to be the backend server port
@@ -136,8 +162,6 @@ function FriendsAndFamily() {
       });
   };
 
-  
-
   return (
     isAuthenticated && (
       <>
@@ -147,6 +171,7 @@ function FriendsAndFamily() {
             <div id="fnf-box">
               {familyAndFriendsList.map((item) => (
                 <Card
+                  key={item.fnf_id}
                   id={item.fnf_id}
                   name={item.fnf_name}
                   relationship={item.fnf_relationship}
@@ -222,13 +247,13 @@ function FriendsAndFamily() {
               <button type="submit" className="save-button">
                 Save
               </button>
-              <FileUpload
-                handleFileChange={handleFileChange}
-                handleFileUpload={handleFileUpload}
-                selectedFile={selectedFile}
-                setSelectedFile={setSelectedFile}
-              />
             </form>
+            <FileUpload
+              handleFileChange={handleFileChange}
+              handleFileUpload={handleFileUpload}
+              selectedFile={selectedFile}
+              setSelectedFile={setSelectedFile}
+            />
           </div>
         )}
       </>
