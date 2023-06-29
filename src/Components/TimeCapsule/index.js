@@ -36,7 +36,7 @@ function TimeCapsule() {
         transformation: {
           crop: "fill",
         },
-        aspectRatio: "1:1",
+        // aspectRatio: "1:1",
         bgColor: "transparent",
 
         carouselLocation: "bottom",
@@ -71,7 +71,7 @@ function TimeCapsule() {
         secureDistribution: "res-s.cloudinary.com",
         transition: "fade",
         zoomProps: {
-          level: 1,
+          level: 2,
         },
         carouselStyle: "indicators",
         indicatorProps: {
@@ -159,7 +159,7 @@ function TimeCapsule() {
         <div
           className="gallery-grid"
           ref={containerRef}
-          style={{ width: "90%", margin: "auto" }}
+          style={{ width: "90%", margin: "auto", marginBottom: "1rem" }}
         />
         <UploadWidget refreshClick={galleryRefresh} />
         <button className="refresh-button" onClick={galleryRefresh}>
