@@ -162,6 +162,17 @@ function FriendsAndFamily() {
       });
   };
 
+   const [isButtonDisabled, setButtonDisabled] = useState(true);
+
+   const handleButtonClick = () => {
+     setButtonDisabled(false);
+     console.log('clicked')
+   };
+
+   const handleOtherButtonClick = () => {
+     setButtonDisabled(true);
+   };
+
   return (
     isAuthenticated && (
       <>
@@ -244,7 +255,12 @@ function FriendsAndFamily() {
                 />
               </label>
               <br></br>
-              <button type="submit" className="save-button">
+              <button
+                type="submit"
+                className="save-button"
+                disabled={isButtonDisabled}
+                onClick={handleOtherButtonClick}
+              >
                 Save
               </button>
             </form>
@@ -253,6 +269,7 @@ function FriendsAndFamily() {
               handleFileUpload={handleFileUpload}
               selectedFile={selectedFile}
               setSelectedFile={setSelectedFile}
+              onClick={handleButtonClick}
             />
           </div>
         )}

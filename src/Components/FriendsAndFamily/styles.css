@@ -1,7 +1,7 @@
 .fnf-header {
   color: var(--whitebackground-text-colour);
   font-size: 2rem;
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .fnf-add-button {
@@ -24,9 +24,9 @@
   object-fit: fill;
 }
 
-.add-button,
-.save-button {
-  /* display: flex; */
+.fnf-add-button,
+.fnf-save-button {
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 100px;
@@ -41,6 +41,11 @@
 .save-button {
   padding: 10px 20px;
   margin: 10px 40px;
+}
+
+.save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .fnf-save-button {
@@ -111,14 +116,13 @@ input {
   width: 90%;
 }
 
-
 @media (max-width: 420px) {
   .fnf-form {
     width: 90%;
   }
 
-  .fnf-add-button, .fnf-save-button {
+  .fnf-add-button,
+  .fnf-save-button {
     width: 90%;
   }
-  
 }

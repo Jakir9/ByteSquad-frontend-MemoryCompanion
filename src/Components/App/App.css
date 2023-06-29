@@ -17,6 +17,22 @@
   --other-colour2: #C2C2C2;
 }
 
+.content-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100vw;
+}
+
 input {
   color:black
 }

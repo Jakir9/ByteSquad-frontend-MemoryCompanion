@@ -7,6 +7,7 @@ function FileUpload({
   handleFileUpload,
   selectedFile,
   setSelectedFile,
+  onClick,
 }) {
   const handleUpload = () => {
     handleFileUpload();
@@ -38,8 +39,20 @@ function FileUpload({
 
   return (
     <div>
-      <input className="fnf-upload-input" type="file" onChange={handleFileChange} />
-      <button className="fnf-upload-button" onClick={handleUpload}>Upload</button>
+      <input
+        className="fnf-upload-input"
+        type="file"
+        onChange={handleFileChange}
+      />
+      <button
+        className="fnf-upload-button"
+        onClick={() => {
+          handleUpload();
+           onClick();
+        }}
+      >
+        Upload
+      </button>
     </div>
   );
 }
