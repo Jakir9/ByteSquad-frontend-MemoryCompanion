@@ -185,12 +185,12 @@ function FriendsAndFamily() {
             <div>
               <button className="fnf-add-button" onClick={handleClick}>
                 {" "}
-                Add{" "}
+                Add Member{" "}
               </button>
             </div>
           </>
         )}
-        
+
         {addButton && ( // When addButton is clicked, it is true, therefore the form will be shown
           <div className="fnf-form">
             {/* Form logic is below - This renders the form, which contains different inputs for the different information we are capturing (e.g. name, relationship.) */}
