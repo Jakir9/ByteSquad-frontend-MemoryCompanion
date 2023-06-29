@@ -1,68 +1,68 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import Card from "../Card/Card";
-import FileUpload from "../Upload/upload";
-import "./styles.css";
-import { useAuth0 } from "@auth0/auth0-react";
-import { useNavigate } from "react-router";
-import axios from "axios";
+import React from 'react'
+import { useState, useEffect } from 'react'
+import Card from '../Card/Card'
+import FileUpload from '../Upload/upload'
+import './styles.css'
+import { useAuth0 } from '@auth0/auth0-react'
+import { useNavigate } from 'react-router'
+import axios from 'axios'
 
-const url = "http://localhost:3002/api/friendsandfamily/";
+const url = 'http://localhost:3002/api/friendsandfamily/'
 
 function FriendsAndFamily() {
   // auth0 code
-  const { isAuthenticated } = useAuth0();
-  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth0()
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (!isAuthenticated) {
       // User is logged in, redirect to dashboard
-      navigate("/login");
+      navigate('/login')
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, navigate])
   // end auth0 code
 
   // The first useState is used for the array of friends and family.
-  const [familyAndFriendsList, setFamilyAndFriendsList] = useState([]);
+  const [familyAndFriendsList, setFamilyAndFriendsList] = useState([])
   // This block of useState is used for populate the form when a new family member is added.
-  const [addButton, setAddButton] = useState(false);
-  const [relationship, setRelationship] = useState("");
-  const [name, setName] = useState("");
-  const [DOB, setDOB] = useState("");
-  const [age, setAge] = useState("");
-  const [selectedFile, setSelectedFile] = useState(null); // Potentially add in a 'default' image that can be pulled from the backend if no image is uploaded.
-  const [photoURL, setPhotoURL] = useState("");
+  const [addButton, setAddButton] = useState(false)
+  const [relationship, setRelationship] = useState('')
+  const [name, setName] = useState('')
+  const [DOB, setDOB] = useState('')
+  const [age, setAge] = useState('')
+  const [selectedFile, setSelectedFile] = useState(null) // Potentially add in a 'default' image that can be pulled from the backend if no image is uploaded.
+  const [photoURL, setPhotoURL] = useState('')
   // The useEffect hook is used to fetch the hardcoded family & friends data from the JSON file. This will be replaced with our database once we have hooked up the backend.
   // It fetches the data and sets the state of familyAndFriendsList to the data. This is then mapped over in the return statement to display the data.
 
   useEffect(() => {
-    fetchFamilyAndFriendsList();
-  }, []);
+    fetchFamilyAndFriendsList()
+  }, [])
 
   async function fetchFamilyAndFriendsList() {
     try {
-      const response = await fetch(url);
+      const response = await fetch(url)
       if (!response.ok) {
-        throw new Error(`Request failed with status ${response.status}`);
+        throw new Error(`Request failed with status ${response.status}`)
       }
-      const data = await response.json();
-      console.log(`This is the data`, data);
-      setFamilyAndFriendsList(Array.isArray(data.payload) ? data.payload : []);
-      console.log(`This is the data.payload`, data.payload);
+      const data = await response.json()
+      console.log(`This is the data`, data)
+      setFamilyAndFriendsList(Array.isArray(data.payload) ? data.payload : [])
+      console.log(`This is the data.payload`, data.payload)
     } catch (error) {
-      console.error("Error fetching data:", error);
-      setFamilyAndFriendsList([]);
+      console.error('Error fetching data:', error)
+      setFamilyAndFriendsList([])
     }
   }
   // This function handles the 'add' click. It essentially set the state to true, which then renders the form (conditional rendering of the form)
   function handleClick() {
-    setAddButton(true);
+    setAddButton(true)
   }
 
   // This function handles the submit button. It creates a new person object with the data from the form, and then adds it to the familyAndFriendsList array. The text capture logic is found within the form itself (event.target.value). This function then sets the state and assigns this to a new person. We can immutably add this new person to the array of family/friends. We then clear the form fields.
   // Image is hardcoded for now, but will be replaced with a file upload feature.
   async function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
     // Declare new person object and assign values from form
     const newPerson = {
       user_id: 1,
@@ -71,41 +71,41 @@ function FriendsAndFamily() {
       fnf_dob: DOB,
       fnf_age: age,
       fnf_photo: photoURL,
-    };
+    }
 
     try {
       const response = await fetch(url, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(newPerson),
-      });
+      })
 
       if (response.ok) {
         // New person was added successfully
-        console.log("New person added successfully");
-        console.log(photoURL);
+        console.log('New person added successfully')
+        console.log(photoURL)
 
-        const data = await response.json();
+        const data = await response.json()
         // Immutably update the familyAndFriendsList array
-        setFamilyAndFriendsList([...familyAndFriendsList, data]);
-        fetchFamilyAndFriendsList();
+        setFamilyAndFriendsList([...familyAndFriendsList, data])
+        fetchFamilyAndFriendsList()
       } else {
         // Handle error
-        throw new Error("Failed to add family and friends member");
+        throw new Error('Failed to add family and friends member')
       }
     } catch (error) {
       // Handle error
-      console.error("Error adding family and friends member:", error);
+      console.error('Error adding family and friends member:', error)
     }
     // Clear form fields
-    setName("");
-    setRelationship("");
-    setAddButton(false);
-    setDOB("");
-    setAge(null);
-    setPhotoURL("");
+    setName('')
+    setRelationship('')
+    setAddButton(false)
+    setDOB('')
+    setAge(null)
+    setPhotoURL('')
   }
 
   // // Function to handle when the delete button is clicked on a family/friends card. It takes in the id of the person, and then filters the array to remove the person with the matching id. This is then set as the new state. This is handed down to the Card component as props.
@@ -125,42 +125,42 @@ function FriendsAndFamily() {
     // Immutably update the array without the person with the matching id
     try {
       const response = await fetch(`${url}/${fnf_id}`, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-      });
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+      })
       if (response.ok) {
-        fetchFamilyAndFriendsList();
-        console.log("Event deleted successfully!");
+        fetchFamilyAndFriendsList()
+        console.log('Event deleted successfully!')
       } else {
-        console.log("Failed to delete event");
+        console.log('Failed to delete event')
       }
     } catch (error) {
-      console.error("Error deleting event:", error);
+      console.error('Error deleting event:', error)
     }
   }
 
   const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+    setSelectedFile(event.target.files[0])
     // console.log(selectedFile); //Selected file is an object with success and payload as keys
-  };
+  }
 
   // Async allowed the string to be updated in the database - it was acting too fast before, only posting an empty string
   const handleFileUpload = async () => {
-    const formData = new FormData();
-    formData.append("file", selectedFile);
+    const formData = new FormData()
+    formData.append('file', selectedFile)
     // Local Host Port needs to be the backend server port
     axios
-      .post("http://localhost:3002/upload", formData)
+      .post('http://localhost:3002/upload', formData)
       .then((response) => {
         // File upload was successful
-        console.log(response.data);
-        setPhotoURL(response.data.payload); //Setting URL state to be the response data from the backend
+        console.log(response.data)
+        setPhotoURL(response.data.payload) //Setting URL state to be the response data from the backend
       })
       .catch((error) => {
         // File upload failed
-        console.error(error);
-      });
-  };
+        console.error(error)
+      })
+  }
 
   return (
     isAuthenticated && (
@@ -184,8 +184,8 @@ function FriendsAndFamily() {
             </div>
             <div>
               <button className="fnf-add-button" onClick={handleClick}>
-                {" "}
-                Add Member{" "}
+                {' '}
+                Add Member{' '}
               </button>
             </div>
           </>
@@ -196,7 +196,7 @@ function FriendsAndFamily() {
             {/* Form logic is below - This renders the form, which contains different inputs for the different information we are capturing (e.g. name, relationship.) */}
             <form className="fnf-form" onSubmit={handleSubmit}>
               <label>
-                {" "}
+                {' '}
                 Name:
                 <input
                   type="text"
@@ -207,7 +207,7 @@ function FriendsAndFamily() {
               </label>
               <br></br>
               <label>
-                {" "}
+                {' '}
                 Relationship:
                 <input
                   type="text"
@@ -219,7 +219,7 @@ function FriendsAndFamily() {
               </label>
               <br></br>
               <label>
-                {" "}
+                {' '}
                 Age:
                 <input
                   type="number"
@@ -232,7 +232,7 @@ function FriendsAndFamily() {
               </label>
               <br></br>
               <label>
-                {" "}
+                {' '}
                 Date of Birth:
                 <input
                   className="input-date"
@@ -258,7 +258,7 @@ function FriendsAndFamily() {
         )}
       </>
     )
-  );
+  )
 }
 
-export default FriendsAndFamily;
+export default FriendsAndFamily
