@@ -19,36 +19,9 @@ function TimeCapsule() {
 
   const containerRef = useRef(null);
 
-  useEffect(() => {
-    if (window && containerRef.current) {
-      // const widget = window.cloudinary.galleryWidget({
-      //   container: containerRef.current,
-      //   cloudName: "dcdmhdqbi",
-      //   mediaAssets: [
-      //     {
-      //       tag: "gallery",
-      //       mediaType: "image"
-      //       // transformation: {
-      //       //   crop: "fill",
-      //       // },
-      //     },
-      //   ],
-      //   // displayProps: {
-      //   //   mode: "expanded",
-      //   //   columns: 3,
-      //   //   spacing: 15,
-      //   // },
-      //   // zoomProps: {
-      //   //   type: "popup",
-      //   //   steps: 3,
-      //   // },
-      //   // aspectRatio: "1:1",
-      //   // imageBreakpoint: 1000,
-      // });
-
-      // widget.render();
-
-      const myWidget = window.cloudinary.galleryWidget({
+  async function fetchCloudinaryGalleryWidget(containerRef) {
+    if (window && containerRef) {
+      const myWidget = await window.cloudinary.galleryWidget({
         container: ".gallery-grid",
         cloudName: "dcdmhdqbi",
         mediaAssets: [
@@ -63,7 +36,9 @@ function TimeCapsule() {
         transformation: {
           crop: "fill",
         },
+        aspectRatio: "1:1",
         bgColor: "transparent",
+
         carouselLocation: "bottom",
         carouselOffset: 10,
         navigation: "always",
@@ -104,30 +79,76 @@ function TimeCapsule() {
         },
       });
       myWidget.render();
+      console.log(myWidget);
     }
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      await fetchCloudinaryGalleryWidget(containerRef.current);
+    }
+    fetchData();
   }, []);
 
   function galleryRefresh() {
-    const widget = window.cloudinary.galleryWidget({
-      container: containerRef.current,
-      cloudName: "dcdmhdqbi", // Replace with your actual Cloudinary cloud name
-      mediaAssets: [{ tag: "gallery" }], // Replace with your desired tag or remove if not needed
+    const myWidget = window.cloudinary.galleryWidget({
+      container: ".gallery-grid",
+      cloudName: "dcdmhdqbi",
+      mediaAssets: [
+        {
+          tag: "gallery",
+          mediaType: "image",
+        },
+      ],
       displayProps: {
-        mode: "expanded",
-        columns: 3,
         spacing: 15,
       },
-
-      zoomProps: {
-        type: "popup",
-        steps: 3,
-      },
-      aspectRatio: "1:1",
       transformation: {
         crop: "fill",
       },
+      aspectRatio: "1:1",
+      bgColor: "transparent",
+
+      carouselLocation: "bottom",
+      carouselOffset: 10,
+      navigation: "always",
+      thumbnailProps: {
+        mediaSymbolSize: 42,
+        spacing: 20,
+        width: 90,
+        height: 90,
+        navigationFloat: true,
+        navigationShape: "square",
+        navigationSize: 40,
+        navigationColor: "#ffffff",
+        selectedStyle: "border",
+        selectedBorderPosition: "bottom",
+        selectedBorderWidth: 4,
+        navigationIconColor: "#000000",
+      },
+      navigationButtonProps: {
+        shape: "rectangle",
+        iconColor: "#ffffff",
+        color: "#000",
+        size: 52,
+        navigationPosition: "offset",
+        navigationOffset: 12,
+      },
+      themeProps: {
+        primary: "#000000",
+        active: "#777777",
+      },
+      secureDistribution: "res-s.cloudinary.com",
+      transition: "fade",
+      zoomProps: {
+        level: 1,
+      },
+      carouselStyle: "indicators",
+      indicatorProps: {
+        shape: "round",
+      },
     });
-    widget.render();
+    myWidget.render();
     console.log("refresh called");
   }
 
@@ -135,7 +156,11 @@ function TimeCapsule() {
     isAuthenticated && (
       <div>
         <h1 className="page-title">TIME CAPSULE</h1>
-        <div className="gallery-grid" ref={containerRef} style={{maxWidth: "90%", margin: "auto"}}/>
+        <div
+          className="gallery-grid"
+          ref={containerRef}
+          style={{ width: "90%", margin: "auto" }}
+        />
         <UploadWidget refreshClick={galleryRefresh} />
         <button className="refresh-button" onClick={galleryRefresh}>
           Refresh
