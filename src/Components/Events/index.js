@@ -169,7 +169,7 @@ function Events() {
                   type="text"
                   value={eventName}
                   onChange={(event) => setEventName(event.target.value)}
-                  placeholder="eventName"
+                  placeholder="Event Name"
                   required
                 />
               </label>
