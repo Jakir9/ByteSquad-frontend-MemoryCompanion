@@ -24,9 +24,9 @@
   object-fit: fill;
 }
 
-.add-button,
-.save-button {
-  /* display: flex; */
+.fnf-add-button,
+.fnf-save-button {
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 100px;

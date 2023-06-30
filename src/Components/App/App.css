@@ -7,6 +7,22 @@
     width: 100vw;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+}
+
 .root{
   --main-background-color: #FAF8F6;
   --main-accent-colour: #79AABD;

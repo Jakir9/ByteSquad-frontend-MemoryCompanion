@@ -160,6 +160,7 @@ function TimeCapsule() {
           className="gallery-grid"
           ref={containerRef}
           style={{ width: "90%", margin: "auto", marginBottom: "1rem" }}
+          
         />
         <UploadWidget refreshClick={galleryRefresh} />
         <button className="refresh-button" onClick={galleryRefresh}>
