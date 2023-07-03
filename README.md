@@ -8,6 +8,7 @@
 ## Table of Contents
 
 - [About](#about)
+- [How to use](#how-to-use)
 - [Problem Statement](#problem-statement)
 - [Team Manifesto](#team-manifesto)
 - [Process](#process)
@@ -17,6 +18,19 @@
 ## About
 
 Memory Companion is a user-friendly application designed to support individuals suffering from dementia and other memory-related conditions. Our app aims to provide a centralized platform for storing memories, visual and audio prompts, and daily activity reminders, tailored to each individual's objectives. By facilitating social care and improving the overall quality of life for those affected by memory loss, our goal is to empower users and enhance their independence.
+
+## How to use
+To browse our application we'd like you to use the following Username and Password upon logging in to access established dummy data for our demo: 
+
+Username: bytesquaduser1@outlook.com
+Password: ByteSquad1!
+
+The app has delete functionality - for the purpose of the dummy data we kindly ask that you don't delete any data :) 
+
+Deployment link: Incoming after important Demo Day on 05/07/23 - We'll deliver soon!
+
+<!-- DO NOT UNCOMMENT UNTIL 06/07/2023 ONCE THE DEMO IS DONE :) -->
+<!-- You can view our live application [here](https://byte-squad-frontend-memory-companion.vercel.app/) -->
 
 ## Problem Statement
 
@@ -68,7 +82,7 @@ Throughout the development of the Memory Companion app, we followed a collaborat
 ## Documentation
 ## Tech Stack
 
-![Team Tech Stack](team-tech-stack.png)
+![Team Tech Stack](team-tech-stack.PNG)
 
 ## Team Members
 
