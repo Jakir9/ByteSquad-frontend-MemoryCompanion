@@ -5,7 +5,8 @@ import MedicationList from "./MedicationList";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router";
 
-const URL = "http://localhost:3002/api/medication/"
+// const URL = "http://localhost:3002/api/medication/"
+const URL = "https://memory-companion-backend.herokuapp.com/api/medication/"
 
 function Medication() {
   // auth0 code

@@ -5,7 +5,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router";
 import "./styles.css";
 
-const URL = "http://localhost:3002/api/events/";
+// const URL = "http://localhost:3002/api/events/";
+const URL = "https://memory-companion-backend.herokuapp.com/api/events/";
 
 function Events() {
   // auth0 code
