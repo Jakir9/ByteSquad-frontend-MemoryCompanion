@@ -1,9 +1,7 @@
-import React, { Component, useState } from 'react'
-import './styles.css'
+import React, { Component, useState } from "react";
+import "./styles.css";
 
-function MedicationList({ name, dosageAmount, schedule, dosageTime, checked })
-{
-  
+function MedicationList({ name, dosageAmount, schedule, dosageTime, checked }) {
   // let numberOfTimes = dosageTime.length;
   // let dosageTimeList = [];
 
@@ -11,17 +9,22 @@ function MedicationList({ name, dosageAmount, schedule, dosageTime, checked })
   //   dosageTimeList.push(<>{dosageTime[i]}<br/></>)
   // }
 
-  console.log(dosageTime)
+  console.log(dosageTime);
   return (
     <tr>
       <td>{name}</td>
       <td>{dosageAmount}</td>
-      <td>{dosageTime}</td>
+      <td>{dosageTime.substring(0, 5)}</td>
       <td>
-        <input className='medication-checkbox' type="checkbox" setChecked={checked} onChange={() => !checked} />
+        <input
+          className="medication-checkbox"
+          type="checkbox"
+          setChecked={checked}
+          onChange={() => !checked}
+        />
       </td>
     </tr>
   );
 }
 
-export default MedicationList
+export default MedicationList;

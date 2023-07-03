@@ -41,7 +41,12 @@ function Events() {
       }
       const data = await response.json();
       console.log(`This is the data`, data);
-      setEventsList(Array.isArray(data.payload) ? data.payload : []);
+      const sortedPayload = data.payload.sort((a, b) => {
+        const dateA = new Date(a.event_date);
+        const dateB = new Date(b.event_date);
+        return dateA - dateB;
+      });
+      setEventsList(sortedPayload);
       console.log(`This is the data.payload`, data.payload);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -136,6 +141,18 @@ function Events() {
     });
     return formattedDate;
   }
+
+  // Function to format the date in the desired format
+  function formatTime(timeString) {
+    const eventTime = new Date(`1970-01-01T${timeString}`);
+    const formattedTime = eventTime.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    });
+    return formattedTime;
+  }
+
   return (
     isAuthenticated && (
       <>
@@ -148,7 +165,7 @@ function Events() {
                 id={item.event_id}
                 eventName={item.event_name}
                 dateOfEvent={formatDate(item.event_date)}
-                eventTime={item.event_time}
+                eventTime={formatTime(item.event_time)}
                 handleDelete={handleDelete}
               />
             ))}
