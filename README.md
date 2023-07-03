@@ -1,6 +1,7 @@
 # Memory Companion App
 
-https://github.com/Jakir9/ByteSquad-frontend-MemoryCompanion/blob/main/MC%20Us1.png
+![MC Us1] (MC Us1.png)
+![Screenshot](screenshot.png)
 
 
 ## Table of Contents
