@@ -74,7 +74,7 @@ Throughout the development of the Memory Companion app, we followed a collaborat
 
 Meet our talented and diverse team members who worked hard to bring the Memory Companion app to life:
 
-- Hani: Former science teacher. [Linked In](https://www.linkedin.com/in/hani-abdi-hassan-84762a271/). [GitHub Profile](https://github.com/RHani24). [CV](file:///C:/Users/M-abd/Downloads/Rahma_Hani%20Abdi%20Hassan_Resume_19-05-2023-17-14-24.pdf)
+- Hani: Former science teacher. [Linked In](https://www.linkedin.com/in/hani-abdi-hassan-84762a271/). [GitHub Profile](https://github.com/RHani24). [CV](https://flowcv.com/resume/rbgq0cairo)
 - Jakir: Computer science graduate and former E-commerce business owner. [GitHub Profile](https://github.com/jakir-github). [CV](jakir_cv.pdf)
 - Victoria: Wine business entrepreneur. [GitHub Profile](https://github.com/victoria-github). [CV](victoria_cv.pdf)
 - Sam: Computer science graduate. [Linked In](https://www.linkedin.com/in/sambaldwin1/) [GitHub Profile](https://github.com/SBaldwin-Git). [CV](https://flowcv.com/resume/iflo58kcar)
