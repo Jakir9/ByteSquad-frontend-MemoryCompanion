@@ -77,7 +77,7 @@ Meet our talented and diverse team members who worked hard to bring the Memory C
 - Hani: Former science teacher. [GitHub Profile](https://github.com/hani-github). [CV](hani_cv.pdf)
 - Jakir: Computer science graduate and former E-commerce business owner. [GitHub Profile](https://github.com/jakir-github). [CV](jakir_cv.pdf)
 - Victoria: Wine business entrepreneur. [GitHub Profile](https://github.com/victoria-github). [CV](victoria_cv.pdf)
-- Sam: Computer science graduate. [GitHub Profile](https://github.com/sam-github). [CV](sam_cv.pdf)
+- Sam: Computer science graduate. [GitHub Profile](https://github.com/SBaldwin-Git). [CV]([sam_cv.pdf](https://flowcv.com/resume/iflo58kcar))
 - Danni: Former project manager in the bus industry. [GitHub Profile](https://github.com/danni-github). [CV](danni_cv.pdf)
 - Darren: Former Guest Service operator. [Linked In](https://www.linkedin.com/in/d-p-broomhall-ffx4shb19/) [GitHub Profile](https://github.com/Darren-p-b). [CV](https://flowcv.com/resume/m8oodqobun)
 
