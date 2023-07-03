@@ -11,6 +11,7 @@
 - [Problem Statement](#problem-statement)
 - [Team Manifesto](#team-manifesto)
 - [Process](#process)
+- [Documentation](#documentation)
 - [Team Members](#team-members)
 
 ## About
@@ -63,6 +64,11 @@ Throughout the development of the Memory Companion app, we followed a collaborat
 - Mapping out user journeys to ensure a seamless and intuitive user experience.
 - Incorporating feedback and lessons learned in daily stand-ups and retrospectives.
 - Embracing a blameless culture where mistakes are seen as learning opportunities.
+
+## Documentation
+## Tech Stack
+
+![Team Tech Stack](team-tech-stack.png)
 
 ## Team Members
 
