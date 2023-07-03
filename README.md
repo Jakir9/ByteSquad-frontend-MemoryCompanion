@@ -1,6 +1,6 @@
 # Memory Companion App
 
-D:\SCHOOL OF CODE\Soc.Git\MEMORY COMPANION - FINAL PROJECT\ByteSquad-frontend-MemoryCompanion\public\MC Us1.png
+https://github.com/Jakir9/ByteSquad-frontend-MemoryCompanion/blob/main/MC%20Us1.png
 
 
 ## Table of Contents
