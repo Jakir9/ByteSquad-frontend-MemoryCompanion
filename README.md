@@ -1,6 +1,6 @@
 # Memory Companion App
 
-![Memory Companion Logo](memory-companion-logo.png)
+![Memory Companion Logo]([memory-companion-logo.png](https://github.com/Jakir9/ByteSquad-frontend-MemoryCompanion/blob/main/public/MC%20Us1.png))
 
 ## Table of Contents
 
