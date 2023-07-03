@@ -130,7 +130,7 @@ try {
                   <MedicationList
                     name={item.medication_name}
                     dosageAmount={item.scheduled_dosage}
-                    dosageTime={item.time_dosage}
+                    dosageTime={item.time_dosage.substring(0,5)}
                     checked={item.checked}
                   />
                 ))}

@@ -7,7 +7,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router";
 import axios from "axios";
 
-const url = "http://localhost:3002/api/friendsandfamily/";
+// const url = "http://localhost:3002/api/friendsandfamily/";
+const url =
+  "https://memory-companion-backend.herokuapp.com/api/friendsandfamily/";
 
 function FriendsAndFamily() {
   // auth0 code

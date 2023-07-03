@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Memory Companion App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![Team Logo](teamlogo.png)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [About](#about)
+- [Problem Statement](#problem-statement)
+- [Team Manifesto](#team-manifesto)
+- [Process](#process)
+- [Team Members](#team-members)
 
-### `npm test`
+## About
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Memory Companion is a user-friendly application designed to support individuals suffering from dementia and other memory-related conditions. Our app aims to provide a centralized platform for storing memories, visual and audio prompts, and daily activity reminders, tailored to each individual's objectives. By facilitating social care and improving the overall quality of life for those affected by memory loss, our goal is to empower users and enhance their independence.
 
-### `npm run build`
+## Problem Statement
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Many individuals suffering from dementia and other conditions struggle to retain memories, follow daily activities, and maintain independence due to memory loss. There is a need for a user-friendly application that provides a centralized platform for storing memories, visual and audio prompts, and daily activity reminders, tailored to the individual's objectives. This application should support multiple users, facilitating social care and improving the overall quality of life for those affected by dementia and other conditions.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Team Manifesto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+As a team, we have established core values and working principles that guide our collaboration and decision-making process. These principles are essential to ensure a positive and effective working environment:
 
-### `npm run eject`
+### Core Values
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Trust
+- Respect
+- Honesty
+- Open communication
+- Equal opportunity
+- Safety
+- Learning
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Working Principles
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Psychological safety is key. No question is stupid!
+- Everyone's voice is heard and valued.
+- Committed to continuous improvement.
+- Blameless culture. Mistakes are welcome and seen as opportunities to learn.
+- Recovery Process: 10/10/10 - 10 minutes discussion, 10-minute break, 10 minutes with the group.
+- Disagree and commit.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Conflict Resolution
 
-## Learn More
+- Don't take anything to heart.
+- Treat people as you would like to be treated.
+- Have fun!
+- Disagree and commit.
+- Bring disagreement to the team if a resolution can't be met.
+- Use the 10/10/10 method (10-minute discussion, 10-minute break, 10 minutes with the rest of the team).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Process
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Throughout the development of the Memory Companion app, we followed a collaborative and iterative process to ensure the best possible outcome. Our process included the following:
 
-### Code Splitting
+- Utilizing Trello for project management and tracking our progress and successes.
+- Using Jira for creating and tracking user stories, flow, and creating tickets.
+- Conducting thorough user research to understand the needs and preferences of our target users.
+- Mapping out user journeys to ensure a seamless and intuitive user experience.
+- Incorporating feedback and lessons learned in daily stand-ups and retrospectives.
+- Embracing a blameless culture where mistakes are seen as learning opportunities.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Team Members
 
-### Analyzing the Bundle Size
+Meet our talented and diverse team members who worked hard to bring the Memory Companion app to life:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Hani: Former science teacher. [GitHub Profile](https://github.com/hani-github). [CV](hani_cv.pdf)
+- Jakir: Computer science graduate and former E-commerce business owner. [GitHub Profile](https://github.com/jakir-github). [CV](jakir_cv.pdf)
+- Victoria: Wine business entrepreneur. [GitHub Profile](https://github.com/victoria-github). [CV](victoria_cv.pdf)
+- Sam: Computer science graduate. [GitHub Profile](https://github.com/sam-github). [CV](sam_cv.pdf)
+- Danni: Former project manager in the bus industry. [GitHub Profile](https://github.com/danni-github). [CV](danni_cv.pdf)
+-
 
-### Making a Progressive Web App
+ Darren: Former Guest Service operator. [GitHub Profile](https://github.com/darren-github). [CV](darren_cv.pdf)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Feel free to explore their profiles and CVs to learn more about their skills and contributions to the Memory Companion app.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
