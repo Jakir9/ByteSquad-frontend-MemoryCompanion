@@ -1,7 +1,7 @@
 # Memory Companion App
 
-![MC Us1] (MC Us1.png)
-![Screenshot](screenshot.png)
+
+![teamlogo](teamlogo.png)
 
 
 ## Table of Contents
