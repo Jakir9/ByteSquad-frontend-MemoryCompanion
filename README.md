@@ -78,7 +78,7 @@ Meet our talented and diverse team members who worked hard to bring the Memory C
 - Jakir: Computer science graduate and former E-commerce business owner. [GitHub Profile](https://github.com/jakir-github). [CV](jakir_cv.pdf)
 - Victoria: Wine business entrepreneur. [GitHub Profile](https://github.com/victoria-github). [CV](victoria_cv.pdf)
 - Sam: Computer science graduate. [Linked In](https://www.linkedin.com/in/sambaldwin1/) [GitHub Profile](https://github.com/SBaldwin-Git). [CV](https://flowcv.com/resume/iflo58kcar)
-- Danni: Former project manager in the bus industry. [GitHub Profile](https://github.com/danni-github). [CV](danni_cv.pdf)
+- Danni: Former project manager in the bus industry. [Linked In](https://www.linkedin.com/in/danielle-shuttleworth/). [GitHub Profile](https://github.com/dannishuttleworth). [CV](danni_cv.pdf)
 - Darren: Former Guest Service operator. [Linked In](https://www.linkedin.com/in/d-p-broomhall-ffx4shb19/) [GitHub Profile](https://github.com/Darren-p-b). [CV](https://flowcv.com/resume/m8oodqobun)
 
 Feel free to explore their profiles and CVs to learn more about their skills and contributions to the Memory Companion app.
