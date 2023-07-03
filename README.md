@@ -1,6 +1,6 @@
 # Memory Companion App
 
-![Memory Companion Logo](MC Us1.png)
+D:\SCHOOL OF CODE\Soc.Git\MEMORY COMPANION - FINAL PROJECT\ByteSquad-frontend-MemoryCompanion\public\MC Us1.png
 
 
 ## Table of Contents
