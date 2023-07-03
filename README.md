@@ -1,7 +1,8 @@
 # Memory Companion App
 
 
-![teamlogo](teamlogo.png)
+![Team Logo](teamlogo.png)
+
 
 
 ## Table of Contents
