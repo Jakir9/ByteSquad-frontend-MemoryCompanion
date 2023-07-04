@@ -89,7 +89,7 @@ Meet our talented and diverse team members who worked hard to bring the Memory C
 
 - Hani: Former science teacher. [Linked In](https://www.linkedin.com/in/hani-abdi-hassan-84762a271/). [GitHub Profile](https://github.com/RHani24). [CV](https://flowcv.com/resume/rbgq0cairo)
 - Jakir: Computer science graduate and former E-commerce business owner. [GitHub Profile](https://github.com/jakir-github). [CV](jakir_cv.pdf)
-- Victoria: Wine business entrepreneur. [Linked In](https://www.linkedin.com/in/vplatt/)[GitHub Profile](https://github.com/veepgoose). [CV]([victoria_cv.pdf](https://flowcv.com/resume/tidrmg7102))
+- Victoria: Wine business entrepreneur. [Linked In](https://www.linkedin.com/in/vplatt/)[GitHub Profile](https://github.com/veepgoose). [CV](https://flowcv.com/resume/tidrmg7102))
 - Sam: Computer science graduate. [Linked In](https://www.linkedin.com/in/sambaldwin1/) [GitHub Profile](https://github.com/SBaldwin-Git). [CV](https://flowcv.com/resume/iflo58kcar)
 - Danni: Former project manager in the bus industry. [Linked In](https://www.linkedin.com/in/danielle-shuttleworth/). [GitHub Profile](https://github.com/dannishuttleworth). [CV](danni_cv.pdf)
 - Darren: Former Guest Service operator. [Linked In](https://www.linkedin.com/in/d-p-broomhall-ffx4shb19/) [GitHub Profile](https://github.com/Darren-p-b). [CV](https://flowcv.com/resume/m8oodqobun)
