@@ -72,7 +72,7 @@ As a team, we have established core values and working principles that guide our
 
 Throughout the development of the Memory Companion app, we followed a collaborative and iterative process to ensure the best possible outcome. Our process included the following:
 
-- Utilizing Trello for project management and tracking our progress and successes.
+- Utilising Trello for project management and tracking our progress and successes.
 - Using Jira for creating and tracking user stories, flow, and creating tickets.
 - Conducting thorough user research to understand the needs and preferences of our target users.
 - Mapping out user journeys to ensure a seamless and intuitive user experience.
